@@ -52,12 +52,24 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -120,9 +132,12 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\EquipoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JugadorController.cs" />
+    <Compile Include="Controllers\OrganizationalUnitController.cs" />
+    <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -144,6 +159,42 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Gruntfile.js" />
+    <Content Include="images\gentellela\1.png" />
+    <Content Include="images\gentellela\4.jpg" />
+    <Content Include="images\gentellela\american-express.png" />
+    <Content Include="images\gentellela\back_disabled.png" />
+    <Content Include="images\gentellela\back_enabled.png" />
+    <Content Include="images\gentellela\back_enabled_hover.png" />
+    <Content Include="images\gentellela\bootstrap-colorpicker\alpha-horizontal.png" />
+    <Content Include="images\gentellela\bootstrap-colorpicker\alpha.png" />
+    <Content Include="images\gentellela\bootstrap-colorpicker\hue-horizontal.png" />
+    <Content Include="images\gentellela\bootstrap-colorpicker\hue.png" />
+    <Content Include="images\gentellela\bootstrap-colorpicker\saturation.png" />
+    <Content Include="images\gentellela\data.png" />
+    <Content Include="images\gentellela\favicon.ico" />
+    <Content Include="images\gentellela\forward_disabled.png" />
+    <Content Include="images\gentellela\forward_enabled.png" />
+    <Content Include="images\gentellela\forward_enabled_hover.png" />
+    <Content Include="images\gentellela\icons.png" />
+    <Content Include="images\gentellela\img.jpg" />
+    <Content Include="images\gentellela\loading.gif" />
+    <Content Include="images\gentellela\mastercard.png" />
+    <Content Include="images\gentellela\paypal2.png" />
+    <Content Include="images\gentellela\picture-2.jpg" />
+    <Content Include="images\gentellela\picture.jpg" />
+    <Content Include="images\gentellela\picture2.jpg" />
+    <Content Include="images\gentellela\prod1.jpg" />
+    <Content Include="images\gentellela\prod2.jpg" />
+    <Content Include="images\gentellela\prod3.jpg" />
+    <Content Include="images\gentellela\prod4.jpg" />
+    <Content Include="images\gentellela\prod5.jpg" />
+    <Content Include="images\gentellela\sprite-skin-flat.png" />
+    <Content Include="images\gentellela\sprite-skin-modern.png" />
+    <Content Include="images\gentellela\sprite-skin-nice.png" />
+    <Content Include="images\gentellela\sprite-skin-simple.png" />
+    <Content Include="images\gentellela\user.png" />
+    <Content Include="images\gentellela\visa.png" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />
@@ -153,6 +204,9 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Scripts\angular-route.min.js.map" />
+    <Content Include="package.json" />
+    <Content Include="bower.json" />
+    <Content Include="FirstTime.cmd" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -181,6 +235,10 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Equipo\Index.cshtml" />
     <Content Include="Views\Jugador\Index.cshtml" />
+    <Content Include="Views\OrganizationalUnit\Index.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Dashboard\Start.cshtml" />
+    <Content Include="Views\Person\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

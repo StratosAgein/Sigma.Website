@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Inicio</h2>
+
+<form class="form-horizontal form-label-left" novalidate>
+
+    <span class="section">Información Personal</span>
+    <p>
+        Es necesario autenticarse para bla bla
+    </p>
+
+    <div class="item form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12">Dependencia</label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <select class="form-control">
+                <option selected disabled>Seleccione una</option>
+                <option>Dependencia 1</option>
+                <option>Dependencia 2</option>
+                <option>Dependencia 3</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="item form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="username">Usuario</label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <input id="username" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="1" name="username" placeholder="e.g thEpisode" required="required" type="text">
+        </div>
+    </div>
+        
+    <div class="item form-group">
+        <label for="password" class="control-label col-md-3">Contraseña</label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <input id="password" type="password" name="password" data-validate-length="6,8" class="form-control col-md-7 col-xs-12" required="required">
+        </div>
+    </div>
+    
+    <div class="ln_solid"></div>
+    <div class="form-group">
+        <div class="col-md-6 col-md-offset-5">
+            <button type="submit" class="btn btn-primary">Cancelar</button>
+            <button id="send" type="submit" class="btn btn-success">Ingresar</button>
+        </div>
+    </div>
+</form>
+
+
+@section Scripts{
+
+    <script>
+        // initialize the validator function
+        validator.message.date = 'not a real date';
+
+        // validate a field on "blur" event, a 'select' on 'change' event & a '.reuired' classed multifield on 'keyup':
+        $('form')
+          .on('blur', 'input[required], input.optional, select.required', validator.checkField)
+          .on('change', 'select.required', validator.checkField)
+          .on('keypress', 'input[required][pattern]', validator.keypress);
+
+        $('.multi.required').on('keyup blur', 'input', function () {
+            validator.checkField.apply($(this).siblings().last()[0]);
+        });
+
+        $('form').submit(function (e) {
+            e.preventDefault();
+            var submit = true;
+
+            // evaluate the form using generic validaing
+            if (!validator.checkAll($(this))) {
+                submit = false;
+            }
+
+            if (submit) {
+                window.location.assign("@Url.Action("Start", "Dashboard")")
+                //this.submit();
+            }
+                
+
+            return false;
+        });
+    </script>
+
+}

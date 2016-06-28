@@ -1,0 +1,27 @@
+{
+  "name": "sigma.website",
+  "homepage": "https://github.com/StratosAgein/Sigma.Website",
+  "authors": [
+    "Camilo Rodríguez <camiepisode@outlook.com>"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "private": true,
+  "dependencies": {
+    "bootstrap": "~3.3.4",
+    "font-awesome": "~4.5.0",
+    "jquery": "~2.1.4",
+    "jquery-pjax": "~1.9.6",
+    "jquery-validate": "~1.13.1",
+    "jquery-validation-unobtrusive": "~3.2.2",
+    "accounting.js": "^0.4.1",
+    "jquery.scrollTo": "^2.1.2",
+    "toastr": "^2.1.2",
+    "gentelella": "1.3.0"
+  }
+}
