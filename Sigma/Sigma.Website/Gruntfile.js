@@ -47,7 +47,7 @@
                 ],
                 dest: './build/css/dashboard-sigma.css'
             },
-            JS: {
+            JSDashboard: {
                 src: [
                     './bower_components/jquery/dist/jquery.js',
                     './bower_components/jquery-pjax/jquery.pjax.js',
@@ -58,9 +58,24 @@
                     './bower_components/accounting.js/accounting.min.js',
                     './bower_components/toastr/toastr.js',
                     './bower_components/Chart.js/Chart.js',
-                    './js/**/*.js'
+                    './js/Global/*.js',
+                    './js/Pages/*.js'
                 ],
                 dest: './build/js/sigma.js'
+            },
+            JSHome:{
+                src: [
+                    './bower_components/jquery/dist/jquery.js',
+                    './bower_components/bootstrap/dist/js/bootstrap.js',
+                    './bower_components/accounting.js/accounting.min.js',
+                    './bower_components/toastr/toastr.js',
+                    './bower_components/Chart.js/Chart.js',
+                    './bower_components/wow.min.js',
+                    './bower_components/jquery.onepagenav.js',
+                    './bower_components/OwlCarousel/owl-carousel/owl.carousel.min.js',
+                    './js/Home/*.js'
+                ],
+                dest: './build/js/home-sigma.js'
             }
         },
 
@@ -76,9 +91,14 @@
         },
 
         uglify: {
-            js: {
+            JSDashboard: {
                 files: {
                     './build/js/sigma.min.js': './build/js/sigma.js'
+                }
+            },
+            JSHome:{
+                files: {
+                    './build/js/home-sigma.min.js': './build/js/home-sigma.js'
                 }
             }
         },

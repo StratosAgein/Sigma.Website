@@ -20,11 +20,12 @@
     "gentelella": "1.3.0",
     "jquery": "~2.1.4",
     "jquery.scrollTo": "^2.1.2",
+    "jQuery-One-Page-Nav": "^3.0.0",
     "jquery-pjax": "~1.9.6",
     "jquery-validate": "~1.13.1",
     "jquery-validation-unobtrusive": "~3.2.2",
     "normalize": "^1.0.4",
-    "toastr": "^2.1.2",
-    "OwlCarousel": "^1.3.2"
+    "OwlCarousel": "^1.3.2",
+    "toastr": "^2.1.2"
   }
 }
