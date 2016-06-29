@@ -276,3 +276,6 @@ node_modules
 
 # Bower Dependencies
 bower_components
+
+# Grunt Build
+build

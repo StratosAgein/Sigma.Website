@@ -21,13 +21,13 @@
             Home: {
                 files:                
                     {
-                        './build/Home.css': './less/MainHome.less'
+                        './build/css/Home.css': './less/MainHome.less'
                     }                
             },
             Dashboard: {
                 files:                 
                     {
-                        './build/Dashboard.css': './less/MainDashboard.less'
+                        './build/css/Dashboard.css': './less/MainDashboard.less'
                     }                
             }
         },
@@ -37,15 +37,15 @@
             },
             CSSHome:{
                 src: [
-                  './build/Home.css'
+                  './build/css/Home.css'
                 ],
-                dest: './build/home-sigma.css'
+                dest: './build/css/home-sigma.css'
             },
             CSSDashboard: {
                 src: [
-                  './build/Dashboard.css'
+                  './build/css/Dashboard.css'
                 ],
-                dest: './build/dashboard-sigma.css'
+                dest: './build/css/dashboard-sigma.css'
             },
             JS: {
                 src: [
@@ -60,30 +60,30 @@
                     './bower_components/Chart.js/Chart.js',
                     './js/**/*.js'
                 ],
-                dest: 'sigma.js'
+                dest: './build/js/sigma.js'
             }
         },
 
         cssmin: {
             CSSHome: {
-                src: './build/home-sigma.css',
-                dest: './build/home-sigma.min.css'
+                src: './build/css/home-sigma.css',
+                dest: './build/css/home-sigma.min.css'
             },
             CSSDashboard: {
-                src: './build/dashboard-sigma.css',
-                dest: './build/dashboard-sigma.min.css'
+                src: './build/css/dashboard-sigma.css',
+                dest: './build/css/dashboard-sigma.min.css'
             }
         },
 
         uglify: {
             js: {
                 files: {
-                    'sigma.min.js': 'sigma.js'
+                    './build/js/sigma.min.js': './build/js/sigma.js'
                 }
             }
         },
         clean: {
-            BuildFiles: ['./build/Home.css', './build/Dashboard.css']
+            BuildFiles: ['./build/css/Home.css', './build/css/Dashboard.css']
         },
         watch: {
             files: ['./js/**/*.js', './less/**/*.less'],
