@@ -8,33 +8,46 @@
             },
             "prod": {
                 options: {
-                    production: false
+                    production: true
                 }
             },
             "dev": {
                 options: {
-                    production: true
+                    production: false
                 }
             }
         },
         less: {
-            production: {
-                files: {
-                    'Main.css': './less/Main.less'
-                }
+            Home: {
+                files:                
+                    {
+                        './build/Home.css': './less/MainHome.less'
+                    }                
+            },
+            Dashboard: {
+                files:                 
+                    {
+                        './build/Dashboard.css': './less/MainDashboard.less'
+                    }                
             }
         },
         concat: {
             options: {
                 separator: ';'
             },
-            css: {
+            CSSHome:{
                 src: [
-                  'Main.css',
+                  './build/Home.css'
                 ],
-                dest: 'sigma.css'
+                dest: './build/home-sigma.css'
             },
-            js: {
+            CSSDashboard: {
+                src: [
+                  './build/Dashboard.css'
+                ],
+                dest: './build/dashboard-sigma.css'
+            },
+            JS: {
                 src: [
                     './bower_components/jquery/dist/jquery.js',
                     './bower_components/jquery-pjax/jquery.pjax.js',
@@ -52,9 +65,13 @@
         },
 
         cssmin: {
-            css: {
-                src: 'sigma.css',
-                dest: 'sigma.min.css'
+            CSSHome: {
+                src: './build/home-sigma.css',
+                dest: './build/home-sigma.min.css'
+            },
+            CSSDashboard: {
+                src: './build/dashboard-sigma.css',
+                dest: './build/dashboard-sigma.min.css'
             }
         },
 
@@ -65,7 +82,9 @@
                 }
             }
         },
-
+        clean: {
+            BuildFiles: ['./build/Home.css', './build/Dashboard.css']
+        },
         watch: {
             files: ['./js/**/*.js', './less/**/*.less'],
             tasks: ['default']
@@ -78,9 +97,10 @@
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-clean');
 
     grunt.registerTask("bower-install", ["bower-install-simple"]);
-    grunt.registerTask('default', ['bower-install-simple', 'less', 'concat', 'cssmin', 'uglify']);
+    grunt.registerTask('default', ['bower-install-simple', 'less', 'concat', 'cssmin', 'uglify', 'clean']);
 
 
 };
