@@ -66,14 +66,14 @@
             JSHome:{
                 src: [
                     './bower_components/jquery/dist/jquery.js',
-                    './bower_components/bootstrap/dist/js/bootstrap.js',
-                    './bower_components/accounting.js/accounting.min.js',
+                    './js/Home/bootstrap.min.js',
                     './bower_components/toastr/toastr.js',
                     './bower_components/Chart.js/Chart.js',
-                    './bower_components/wow.min.js',
-                    './bower_components/jquery.onepagenav.js',
+                    './bower_components/jQuery-One-Page-Nav/jquery.nav.js',
+                    './js/Home/*.js',
                     './bower_components/OwlCarousel/owl-carousel/owl.carousel.min.js',
-                    './js/Home/*.js'
+                    './bower_components/accounting.js/accounting.min.js',
+                    './js/Home/wow.min.js'
                 ],
                 dest: './build/js/home-sigma.js'
             }

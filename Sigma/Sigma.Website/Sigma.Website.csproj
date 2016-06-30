@@ -156,6 +156,8 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\ElegantIcons.svg" />
+    <Content Include="fonts\et-icons.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -195,6 +197,18 @@
     <Content Include="images\gentellela\sprite-skin-simple.png" />
     <Content Include="images\gentellela\user.png" />
     <Content Include="images\gentellela\visa.png" />
+    <Content Include="images\home\footer.jpg" />
+    <Content Include="images\home\header.jpg" />
+    <Content Include="images\home\loader.gif" />
+    <Content Include="images\home\logo-active.png" />
+    <Content Include="images\home\logo.png" />
+    <Content Include="images\home\popup.jpg" />
+    <Content Include="images\home\pricing1.jpg" />
+    <Content Include="images\home\pricing2.jpg" />
+    <Content Include="images\home\table-1.jpg" />
+    <Content Include="images\home\table-2-hover.jpg" />
+    <Content Include="images\home\table-2.jpg" />
+    <Content Include="images\home\table-3.jpg" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />
@@ -207,6 +221,9 @@
     <Content Include="package.json" />
     <Content Include="bower.json" />
     <Content Include="FirstTime.cmd" />
+    <Content Include="fonts\ElegantIcons.eot" />
+    <Content Include="fonts\ElegantIcons.ttf" />
+    <Content Include="fonts\ElegantIcons.woff" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -229,7 +246,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_DashboardLayout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -239,9 +256,13 @@
     <Content Include="Views\Dashboard\Index.cshtml" />
     <Content Include="Views\Dashboard\Start.cshtml" />
     <Content Include="Views\Person\Index.cshtml" />
+    <Content Include="Views\Shared\_HomeLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="images\home\favicons\" />
+    <Folder Include="images\home\icons\" />
+    <Folder Include="images\home\team\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
