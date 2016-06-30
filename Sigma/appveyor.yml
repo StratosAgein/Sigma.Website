@@ -45,5 +45,5 @@ notifications:
     auth_token:
       secure: xoxp-33771451379-33820609287-55826048132-4f117727bc
     channel: '#sigma-dev'
-    on_build_success: false
-    on_build_failure: false
+    on_build_success: true
+    on_build_failure: true
