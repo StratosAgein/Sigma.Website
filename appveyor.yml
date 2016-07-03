@@ -21,11 +21,7 @@ before_build:
           npm install
           grunt
           cd ..
-          echo ========
-          dir
           cd ..
-          echo ========
-          dir
   
 build:
   publish_wap: true
@@ -34,7 +30,7 @@ build:
 #Deployment configuration
 deploy:
 - provider: WebDeploy
-  server: sigma.scm.azurewebsites.net:443/msdeploy.axd?site=sigma
+  server: sigma.scm.azurewebsites.net:443
   name: sigma
   website: sigma
   username: $sigma
