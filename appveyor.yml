@@ -42,10 +42,10 @@ deploy:
   on:
     branch: master
 
-notifications:
-  - provider: Slack
-    incoming_webhook:
-      secure: https://hooks.slack.com/services/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
-    channel: '#sigma-dev'
-    on_build_success: true
-    on_build_failure: true
+#notifications:
+#  - provider: Slack
+#    incoming_webhook:
+#      secure: https://hooks.slack.com/services/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
+#    channel: '#sigma-dev'
+#    on_build_success: true
+#    on_build_failure: true
