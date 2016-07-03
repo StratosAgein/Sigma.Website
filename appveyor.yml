@@ -20,6 +20,7 @@ before_build:
           grunt
           cd ..
           nuget restore
+          cd Sigma\Sigma.Website
   
   
 build:
