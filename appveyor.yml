@@ -1,6 +1,8 @@
 shallow_clone: true
 # version format
 version: 1.0.{build}
+configuration: Release
+platform: Any CPU
 # Fix line endings in Windows. (runs before repo cloning)
 init:
   - git config --global core.autocrlf true
@@ -34,7 +36,8 @@ deploy:
   name: sigma
   website: sigma
   username: $sigma
-  password: am5ZovDNRGwt6aq1R44iylzYgrqtiYFwfJKRloBhFGqZsckgMW6YXG4piFiN
+  password:
+    secure: IhaZvK00JIzvrUW+ljpzeOMh5AfnLiXWc6LsT4IwMmHKS5B8hggnq+WeWZcMBgEo++2Pa+texX1Q+ytPZhoSIQ==
   ntlm: false
   remove_files: true
   app_offline: false
