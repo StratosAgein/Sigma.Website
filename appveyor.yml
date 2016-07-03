@@ -6,7 +6,7 @@ init:
   - git config --global core.autocrlf true
 
 cache:
-  - packages -> **\packages.config
+  - packages -> Sigma\**\packages.config
   - Sigma\Sigma.Website\bower_components -> Sigma\Sigma.Website\bower.json
   - Sigma\Sigma.Website\node_modules -> Sigma\Sigma.Website\package.json
 
@@ -15,9 +15,9 @@ install:
 
 before_build:
   - ps: .\CreateBuildTxt.ps1
-  - nuget restore
+  - appveyor-retry nuget restore <Sigma\Sigma.Website\Sigma.sln>
   - cmd: |
-          cd Sigma.Website
+          cd Sigma\Sigma.Website
           npm install
           grunt
           cd ..
