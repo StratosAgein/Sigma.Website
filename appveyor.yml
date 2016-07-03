@@ -20,7 +20,9 @@ before_build:
           grunt
           cd ..
           nuget restore
-          cd Sigma\Sigma.Website
+          dir
+          echo ===========
+          cd Sigma.Website
   
   
 build:
