@@ -15,14 +15,11 @@ install:
 before_build:
   - ps: .\CreateBuildTxt.ps1
   - cmd: |
-          cd Sigma\Sigma.Website
+          cd Sigma          
+          nuget restore
+          cd Sigma.Website
           npm install
           grunt
-          cd ..
-          nuget restore
-          dir
-          echo ===========
-          cd Sigma.Website
   
   
 build:
@@ -43,3 +40,11 @@ deploy:
   artifact: Sigma.Website
   on:
     branch: master
+
+notifications:
+  - provider: Slack
+    incoming_webhook:
+      secure: https://hooks.slack.com/services/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
+    channel: '#sigma-dev'
+    on_build_success: true
+    on_build_failure: true
