@@ -30,12 +30,11 @@ build:
 #Deployment configuration
 deploy:
 - provider: WebDeploy
-  server: sigma.scm.azurewebsites.net:443
+  server: sigma.scm.azurewebsites.net:443/msdeploy.axd?site=sigma
   name: sigma
   website: sigma
   username: $sigma
-  password:
-    secure: IhaZvK00JIzvrUW+ljpzeOMh5AfnLiXWc6LsT4IwMmHKS5B8hggnq+WeWZcMBgEo++2Pa+texX1Q+ytPZhoSIQ==
+  password: am5ZovDNRGwt6aq1R44iylzYgrqtiYFwfJKRloBhFGqZsckgMW6YXG4piFiN
   ntlm: false
   remove_files: true
   app_offline: false
