@@ -7,8 +7,8 @@ init:
 
 cache:
   - packages -> **\packages.config
-  - Sigma.Website\bower_components -> Sigma.Website\bower.json
-  - Sigma.Website\node_modules -> Sigma.Website\package.json
+  - Sigma\Sigma.Website\bower_components -> Sigma\Sigma.Website\bower.json
+  - Sigma\Sigma.Website\node_modules -> Sigma\Sigma.Website\package.json
 
 install:
   - npm install -g grunt-cli  1> nul
