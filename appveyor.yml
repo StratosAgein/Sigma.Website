@@ -18,8 +18,9 @@ before_build:
           cd Sigma\Sigma.Website
           npm install
           grunt
+          cd ..
           nuget restore
-  - nuget restore
+  
   
 build:
   publish_wap: true
