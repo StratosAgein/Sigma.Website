@@ -43,7 +43,7 @@ deploy:
   website: sigma.websites.net
   username: $sigma
   password:
-    secure: aYsx7+mSFJEgNnKbcYXl6FI72lRKggHNC8dLwJxvQE9644nQy7HJhqabFoB3EsElh+/V8pggABq+Isi3f5vYSA==
+    secure: MASVXvz2HYucpe3uT2hvHzftMRYUInfhktp8gyiLKPCPu0WKUTaFte2DQq9EFHJnkMRYp2nFb/9RTFvp0TDyng==
   remove_files: false
   on:
     branch: master
