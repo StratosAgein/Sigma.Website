@@ -28,13 +28,23 @@ build:
   project: Sigma\Sigma.sln
 
 #Deployment configuration
+#deploy:
+#- provider: FTP
+#  host: waws-prod-bn1-005.ftp.azurewebsites.windows.net/site/wwwroot
+#  protocol: ftp
+#  username: sigma\$sigma
+#  password:
+#    secure: aYsx7+mSFJEgNnKbcYXl6FI72lRKggHNC8dLwJxvQE9644nQy7HJhqabFoB3EsElh+/V8pggABq+Isi3f5vYSA==
+#  on:
+#    branch: master
 deploy:
-- provider: FTP
-  host: waws-prod-bn1-005.ftp.azurewebsites.windows.net/site/wwwroot
-  protocol: ftp
-  username: sigma\$sigma
+- provider: WebDeploy
+  server: sigma.scm.azurewebsites.net:443
+  website: sigma.websites.net
+  username: $sigma
   password:
     secure: aYsx7+mSFJEgNnKbcYXl6FI72lRKggHNC8dLwJxvQE9644nQy7HJhqabFoB3EsElh+/V8pggABq+Isi3f5vYSA==
+  remove_files: false
   on:
     branch: master
 
