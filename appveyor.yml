@@ -32,7 +32,7 @@ build:
 #Deployment configuration
 deploy:
 - provider: FTP
-  host: ftp://waws-prod-bn1-005.ftp.azurewebsites.windows.net/site/wwwroot
+  host: waws-prod-bn1-005.ftp.azurewebsites.windows.net/site/wwwroot
   protocol: ftp
   username: sigma\$sigma
   password:
