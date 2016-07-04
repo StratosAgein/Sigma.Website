@@ -31,17 +31,12 @@ build:
 
 #Deployment configuration
 deploy:
-- provider: WebDeploy
-  server: sigma.scm.azurewebsites.net:443/msdeploy.axd?site=sigma
-  name: sigma
-  website: sigma
-  username: $sigma
+- provider: FTP
+  host: ftp://waws-prod-bn1-005.ftp.azurewebsites.windows.net/site/wwwroot
+  protocol: ftp
+  username: sigma\$sigma
   password:
-    secure: IhaZvK00JIzvrUW+ljpzeOMh5AfnLiXWc6LsT4IwMmHKS5B8hggnq+WeWZcMBgEo++2Pa+texX1Q+ytPZhoSIQ==
-  ntlm: false
-  remove_files: true
-  app_offline: false
-  artifact: Sigma.Website
+    secure: aYsx7+mSFJEgNnKbcYXl6FI72lRKggHNC8dLwJxvQE9644nQy7HJhqabFoB3EsElh+/V8pggABq+Isi3f5vYSA==
   on:
     branch: master
 
