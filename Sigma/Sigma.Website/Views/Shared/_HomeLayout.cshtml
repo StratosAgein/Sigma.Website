@@ -22,13 +22,13 @@
     
     <!-- Owl -->
     <link rel="stylesheet" type="text/css" href="~/bower_components/OwlCarousel/owl-carousel/owl.carousel.css">
-    
+
     <!-- Font Awesome -->
     <link rel="stylesheet" type="text/css" href="~/bower_components/font-awesome/css/font-awesome.min.css">
     <!-- Elegant Icons -->
     <link href="~/fonts/et-icons.css" rel="stylesheet" />
     <!-- Main style -->
-    @Styles.Render("~/build/css/home-sigma.min.css")
+    @Styles.Render("~/build/css/home-sigma.css")
 </head>
 
 <body>
@@ -69,15 +69,15 @@
         <a href="#" class="close-link"><i class="arrow_up"></i></a>
     </div>
     <!-- Scripts -->
-    @*<script src="js/jquery-1.11.1.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/wow.min.js"></script>*@
-    @*<script src="js/typewriter.js"></script>*@
-    @*<script src="js/jquery.onepagenav.js"></script>*@
-    @*<script src="js/main.js"></script>*@
-    @Scripts.Render("~/build/js/home-sigma.min.js")
+    @Scripts.Render("~/build/js/home-sigma.js")
     @RenderSection("scripts", required: false)
+    <script src="~/js/Home/jquery-1.11.1.min.js"></script>
+    <script src="~/js/Home/owl.carousel.min.js"></script>
+    <script src="~/js/Home/bootstrap.min.js"></script>
+    <script src="~/js/Home/wow.min.js"></script>
+    <script src="~/js/Home/typewriter.js"></script>
+    <script src="~/js/Home/jquery.onepagenav.js"></script>
+    <script src="~/js/Home/main.js"></script>
 </body>
 
 </html>

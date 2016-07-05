@@ -51,11 +51,11 @@
                 src: [
                     './bower_components/jquery/dist/jquery.js',
                     './bower_components/jquery-pjax/jquery.pjax.js',
-                    './bower_components/jquery-validation/dist/jquery.validate.min.js',
-                    './bower_components/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js',
-                    './bower_components/jquery.scrollTo/jquery.scrollTo.min.js',
+                    './bower_components/jquery-validation/dist/jquery.validate.js',
+                    './bower_components/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js',
+                    './bower_components/jquery.scrollTo/jquery.scrollTo.js',
                     './bower_components/bootstrap/dist/js/bootstrap.js',
-                    './bower_components/accounting.js/accounting.min.js',
+                    './bower_components/accounting.js/accounting.js',
                     './bower_components/toastr/toastr.js',
                     './bower_components/Chart.js/Chart.js',
                     './js/Global/*.js',
@@ -65,15 +65,7 @@
             },
             JSHome:{
                 src: [
-                    './bower_components/jquery/dist/jquery.js',
-                    './js/Home/bootstrap.min.js',
-                    './bower_components/toastr/toastr.js',
-                    './bower_components/Chart.js/Chart.js',
-                    './bower_components/jQuery-One-Page-Nav/jquery.nav.js',
-                    './js/Home/*.js',
-                    './bower_components/OwlCarousel/owl-carousel/owl.carousel.min.js',
-                    './bower_components/accounting.js/accounting.min.js',
-                    './js/Home/wow.min.js'
+                    './js/Global/*.js'
                 ],
                 dest: './build/js/home-sigma.js'
             }
