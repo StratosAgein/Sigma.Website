@@ -14,13 +14,11 @@ install:
 
 before_build:
   - ps: .\CreateBuildTxt.ps1
-  - cmd: |
-          cd Sigma          
+  - cmd: |       
           nuget restore
           cd Sigma.Website
           npm install
           grunt
-          cd ..
           cd ..
   
 build:
