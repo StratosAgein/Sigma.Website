@@ -23,7 +23,7 @@ before_build:
   
 build:
   publish_wap: true
-  project: Sigma\Sigma.sln
+  project: Sigma.sln
 
 #Deployment configuration
 #deploy:
