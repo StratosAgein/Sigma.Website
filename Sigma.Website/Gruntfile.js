@@ -49,7 +49,7 @@
             },
             JSDashboard: {
                 src: [
-                    './bower_components/jquery/dist/jquery.js',
+                    './bower_components/jquery/jquery.js',
                     './bower_components/jquery-pjax/jquery.pjax.js',
                     './bower_components/jquery-validation/dist/jquery.validate.js',
                     './bower_components/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js',

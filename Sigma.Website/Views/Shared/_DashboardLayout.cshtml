@@ -221,8 +221,10 @@
         <!-- /footer content -->
     </div>
 
-    @Scripts.Render("~/build/js/sigma.min.js")
 
+    <script src="~/bower_components/gentelella/vendors/jquery/dist/jquery.min.js"></script>
+    <script src="~/bower_components/gentelella/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/bower_components/bootstrap/js/tooltip.js"></script>
     <!-- FastClick -->
     <script src="~/bower_components/gentelella/vendors/fastclick/lib/fastclick.js"></script>
     <!-- NProgress -->
@@ -231,7 +233,7 @@
     <script src="~/bower_components/gentelella/vendors/validator/validator.min.js"></script>
 
     <!-- Custom Theme Scripts -->
-    <script src="~/bower_components/gentelella/build/js/custom.min.js"></script>
+    <script src="~/bower_components/gentelella/build/js/custom.js"></script>
 
     @RenderSection("scripts", required: false)
 </body>
