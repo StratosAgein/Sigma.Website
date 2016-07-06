@@ -36,7 +36,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -227,6 +226,7 @@
     <Content Include="fonts\ElegantIcons.eot" />
     <Content Include="fonts\ElegantIcons.ttf" />
     <Content Include="fonts\ElegantIcons.woff" />
+    <None Include="Properties\PublishProfiles\SigmaWebDeploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -303,15 +303,27 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <PropertyGroup>
+    <CopyAllFilesToSingleFolderForPackageDependsOn>
+      CustomCollectFiles;
+      $(CopyAllFilesToSingleFolderForPackageDependsOn);
+    </CopyAllFilesToSingleFolderForPackageDependsOn>
+
+    <CopyAllFilesToSingleFolderForMsdeployDependsOn>
+      CustomCollectFiles;
+      $(CopyAllFilesToSingleFolderForPackageDependsOn);
+    </CopyAllFilesToSingleFolderForMsdeployDependsOn>
+  </PropertyGroup>
   <Target Name="CustomCollectFiles">
     <ItemGroup>
-      <_BowerComponents Include="$(SolutionDir)bower_components\**\*">
+      <_BuildComponents Include="$(SolutionDir)build\**\*.*">
+      <_BowerComponents Include="$(SolutionDir)bower_components\**\*.*" />
       <_MinFiles Include="*.min.*" />
       <_BuildTxt Include="$(SolutionDir)build.txt" />
-      <FilesForPackagingFromProject Include="%(_BowerComponents.Identity)">
+      <FilesForPackagingFromProject Include="%(_BuildComponents.Identity)">
         <DestinationRelativePath>%(RecursiveDir)%(Filename)%(Extension)</DestinationRelativePath>
       </FilesForPackagingFromProject>
-      <FilesForPackagingFromProject Include="%(_BuildComponents.Identity)">
+      <FilesForPackagingFromProject Include="%(_BowerComponents.Identity)">
         <DestinationRelativePath>%(RecursiveDir)%(Filename)%(Extension)</DestinationRelativePath>
       </FilesForPackagingFromProject>
       <FilesForPackagingFromProject Include="%(_MinFiles.Identity)">
