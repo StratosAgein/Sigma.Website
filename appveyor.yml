@@ -20,7 +20,7 @@ before_build:
           npm install
           grunt
           cd ..
-  
+
 build:
   publish_wap: true
   project: Sigma.sln
@@ -44,6 +44,7 @@ deploy:
     secure: MASVXvz2HYucpe3uT2hvHzftMRYUInfhktp8gyiLKPCPu0WKUTaFte2DQq9EFHJnkMRYp2nFb/9RTFvp0TDyng==
   ntlm: false
   remove_files: false
+  post_sync: Sigma.Website/FirstTime.cmd
   on:
     branch: master
 
