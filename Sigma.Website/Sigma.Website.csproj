@@ -305,8 +305,7 @@
   </ProjectExtensions>
   <Target Name="CustomCollectFiles">
     <ItemGroup>
-      <_BowerComponents Include="$(SolutionDir)bower_components\**\*" />
-      <_BuildComponents Include="$(SolutionDir)build\**\*.*" />
+      <_BowerComponents Include="$(SolutionDir)bower_components\**\*">
       <_MinFiles Include="*.min.*" />
       <_BuildTxt Include="$(SolutionDir)build.txt" />
       <FilesForPackagingFromProject Include="%(_BowerComponents.Identity)">
