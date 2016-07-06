@@ -36,7 +36,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -303,22 +303,10 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <PropertyGroup>
-    <CopyAllFilesToSingleFolderForPackageDependsOn>
-    <ExcludeFilesFromDeployment>*.cs;**\.svn\**\*.*;Web.*.config;*.csproj*</ExcludeFilesFromDeployment>
-    <ExcludeFoldersFromDeployment>.svn;Controllers;BootstrapperTasks;Properties</ExcludeFoldersFromDeployment>
-      CustomCollectFiles;
-      $(CopyAllFilesToSingleFolderForPackageDependsOn);
-    </CopyAllFilesToSingleFolderForPackageDependsOn>
-    <CopyAllFilesToSingleFolderForMsdeployDependsOn>
-      CustomCollectFiles;
-      $(CopyAllFilesToSingleFolderForPackageDependsOn);
-    </CopyAllFilesToSingleFolderForMsdeployDependsOn>
-  </PropertyGroup>
   <Target Name="CustomCollectFiles">
     <ItemGroup>
       <_BowerComponents Include="$(SolutionDir)bower_components\**\*" />
-      <_BuildComponents Include="$(SolutionDir)build\*\*.*" />
+      <_BuildComponents Include="$(SolutionDir)build\**\*.*" />
       <_MinFiles Include="*.min.*" />
       <_BuildTxt Include="$(SolutionDir)build.txt" />
       <FilesForPackagingFromProject Include="%(_BowerComponents.Identity)">
