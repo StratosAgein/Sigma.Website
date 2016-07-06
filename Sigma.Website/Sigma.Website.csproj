@@ -227,8 +227,6 @@
     <Content Include="fonts\ElegantIcons.eot" />
     <Content Include="fonts\ElegantIcons.ttf" />
     <Content Include="fonts\ElegantIcons.woff" />
-    <None Include="Properties\PublishProfiles\CustomWebDeployPackage.pubxml" />
-    <None Include="Properties\PublishProfiles\SigmaWebDeploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -307,6 +305,8 @@
   </ProjectExtensions>
   <PropertyGroup>
     <CopyAllFilesToSingleFolderForPackageDependsOn>
+    <ExcludeFilesFromDeployment>*.cs;**\.svn\**\*.*;Web.*.config;*.csproj*</ExcludeFilesFromDeployment>
+    <ExcludeFoldersFromDeployment>.svn;Controllers;BootstrapperTasks;Properties</ExcludeFoldersFromDeployment>
       CustomCollectFiles;
       $(CopyAllFilesToSingleFolderForPackageDependsOn);
     </CopyAllFilesToSingleFolderForPackageDependsOn>
