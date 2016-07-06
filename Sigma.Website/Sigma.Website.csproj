@@ -316,7 +316,7 @@
   </PropertyGroup>
   <Target Name="CustomCollectFiles">
     <ItemGroup>
-      <_BuildComponents Include="$(SolutionDir)build\**\*.*">
+      <_BuildComponents Include="$(SolutionDir)build\**\*.*" />
       <_BowerComponents Include="$(SolutionDir)bower_components\**\*.*" />
       <_MinFiles Include="*.min.*" />
       <_BuildTxt Include="$(SolutionDir)build.txt" />
