@@ -6,6 +6,7 @@ init:
   - git config --global core.autocrlf true
 
 cache:
+  - packages -> **\packages.config
   - Sigma.Website\bower_components -> Sigma.Website\bower.json
   - Sigma.Website\node_modules -> Sigma.Website\package.json
 
@@ -13,9 +14,9 @@ install:
   - npm install -g grunt-cli  1> nul
 
 before_build:
-  - ps: .\CreateBuildTxt.ps1
-  - cmd: |       
-          nuget restore
+  - ps: .\CreateBuildTxt.ps1  
+  - nuget restore
+  - cmd: |
           cd Sigma.Website
           npm install
           grunt
@@ -23,18 +24,8 @@ before_build:
 
 build:
   publish_wap: true
-  project: Sigma.sln
 
 #Deployment configuration
-#deploy:
-#- provider: FTP
-#  host: waws-prod-bn1-005.ftp.azurewebsites.windows.net/site/wwwroot
-#  protocol: ftp
-#  username: sigma\$sigma
-#  password:
-#    secure: aYsx7+mSFJEgNnKbcYXl6FI72lRKggHNC8dLwJxvQE9644nQy7HJhqabFoB3EsElh+/V8pggABq+Isi3f5vYSA==
-#  on:
-#    branch: master
 deploy:
 - provider: WebDeploy
   server: https://sigma.scm.azurewebsites.net:443/msdeploy.axd?site=sigma
@@ -43,8 +34,9 @@ deploy:
   password:
     secure: MASVXvz2HYucpe3uT2hvHzftMRYUInfhktp8gyiLKPCPu0WKUTaFte2DQq9EFHJnkMRYp2nFb/9RTFvp0TDyng==
   ntlm: false
-  remove_files: false
-  post_sync: Sigma.Website/FirstTime.cmd
+  remove_files: true
+  app_offline: false
+  artifact: Sigma.Website
   on:
     branch: master
 
