@@ -37,11 +37,12 @@ build:
 #    branch: master
 deploy:
 - provider: WebDeploy
-  server: sigma.scm.azurewebsites.net:443
-  website: sigma.websites.net
+  server: https://sigma.scm.azurewebsites.net:443/msdeploy.axd?site=sigma
+  website: sigma
   username: $sigma
   password:
     secure: MASVXvz2HYucpe3uT2hvHzftMRYUInfhktp8gyiLKPCPu0WKUTaFte2DQq9EFHJnkMRYp2nFb/9RTFvp0TDyng==
+  ntlm: false
   remove_files: false
   on:
     branch: master
