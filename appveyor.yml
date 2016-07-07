@@ -34,7 +34,7 @@ deploy:
   password:
     secure: MASVXvz2HYucpe3uT2hvHzftMRYUInfhktp8gyiLKPCPu0WKUTaFte2DQq9EFHJnkMRYp2nFb/9RTFvp0TDyng==
   ntlm: false
-  remove_files: true
+  remove_files: false
   app_offline: false
   artifact: Sigma.Website
   on:
