@@ -314,6 +314,12 @@
       $(CopyAllFilesToSingleFolderForPackageDependsOn);
     </CopyAllFilesToSingleFolderForMsdeployDependsOn>
   </PropertyGroup>
+  <Target Name="BeforeBuild">
+    <ItemGroup>
+      <Content Include="$(SolutionDir)bower_components\**\*.*" />
+      <Content Include="$(SolutionDir)build\**\*.*" />
+    </ItemGroup>
+  </Target>
   <Target Name="CustomCollectFiles">
     <ItemGroup>
       <_BuildComponents Include="$(SolutionDir)build\**\*.*" />
