@@ -316,8 +316,8 @@
   </PropertyGroup>
   <Target Name="BeforeBuild">
     <ItemGroup>
-      <Content Include="$(SolutionDir)bower_components\**\*.*" />
-      <Content Include="$(SolutionDir)build\**\*.*" />
+      <Content Include="bower_components\**\*.*" />
+      <Content Include="build\**\*.*" />
     </ItemGroup>
   </Target>
   <Target Name="CustomCollectFiles">
