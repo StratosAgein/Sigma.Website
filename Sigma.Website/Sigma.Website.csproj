@@ -199,8 +199,25 @@
     <Content Include="images\gentellela\sprite-skin-simple.png" />
     <Content Include="images\gentellela\user.png" />
     <Content Include="images\gentellela\visa.png" />
+    <Content Include="images\home\favicons\android-chrome-36x36.png" />
+    <Content Include="images\home\favicons\android-chrome-48x48.png" />
+    <Content Include="images\home\favicons\apple-touch-icon-57x57.png" />
+    <Content Include="images\home\favicons\apple-touch-icon-60x60.png" />
+    <Content Include="images\home\favicons\apple-touch-icon-precomposed.png" />
+    <Content Include="images\home\favicons\apple-touch-icon.png" />
+    <Content Include="images\home\favicons\browserconfig.xml" />
+    <Content Include="images\home\favicons\favicon-16x16.png" />
+    <Content Include="images\home\favicons\favicon-32x32.png" />
+    <Content Include="images\home\favicons\favicon.ico" />
+    <Content Include="images\home\favicons\mstile-150x150.png" />
+    <Content Include="images\home\favicons\mstile-310x150.png" />
+    <Content Include="images\home\favicons\mstile-70x70.png" />
+    <Content Include="images\home\favicons\Readme.txt" />
     <Content Include="images\home\footer.jpg" />
     <Content Include="images\home\header.jpg" />
+    <Content Include="images\home\icons\guru-blue.png" />
+    <Content Include="images\home\icons\heart-blue.png" />
+    <Content Include="images\home\icons\weight-blue.png" />
     <Content Include="images\home\loader.gif" />
     <Content Include="images\home\logo-active.png" />
     <Content Include="images\home\logo.png" />
@@ -226,7 +243,7 @@
     <Content Include="fonts\ElegantIcons.eot" />
     <Content Include="fonts\ElegantIcons.ttf" />
     <Content Include="fonts\ElegantIcons.woff" />
-    <None Include="Properties\PublishProfiles\SigmaWebDeploy.pubxml" />
+    <Content Include="images\home\favicons\manifest.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -263,8 +280,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="images\home\favicons\" />
-    <Folder Include="images\home\icons\" />
     <Folder Include="images\home\team\" />
   </ItemGroup>
   <ItemGroup>
@@ -308,7 +323,6 @@
       CustomCollectFiles;
       $(CopyAllFilesToSingleFolderForPackageDependsOn);
     </CopyAllFilesToSingleFolderForPackageDependsOn>
-
     <CopyAllFilesToSingleFolderForMsdeployDependsOn>
       CustomCollectFiles;
       $(CopyAllFilesToSingleFolderForPackageDependsOn);
@@ -318,6 +332,7 @@
     <ItemGroup>
       <Content Include="bower_components\**\*.*" />
       <Content Include="build\**\*.*" />
+      <Content Include="js\**\*.*" />
     </ItemGroup>
   </Target>
   <Target Name="CustomCollectFiles">
