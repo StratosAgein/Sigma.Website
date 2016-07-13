@@ -2,5 +2,12 @@
 # Sigma.Website
 Contain website project developed in ASP .Net MVC and Angular.js
 
+## Technologies
+This project was build in ASP .Net MVC, you can learn this technologie on http://www.asp.net/mvc
+
+For connect Frontend and ASP Backend we use Angular.js. http://campus.codeschool.com/courses/shaping-up-with-angular-js/intro
+
+Also, for pre-compiling CSS and Minification task we use Grunt. http://gruntjs.com/
+
 ## Contribution
 After clone this project on your own Windows run "FirstTime.cmd" Script at "Sigma/Sigma.Website/", this Script install Node.js, NPM and install dependencies
