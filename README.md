@@ -3,7 +3,7 @@
 Contain website project developed in ASP .Net MVC and Angular.js
 
 ## Technologies
-This project was build in ASP .Net MVC 5, you can learn this technologie on http://www.asp.net/mvc
+This project was build in ASP .Net MVC 5 with C#, you can learn this technologie on http://www.asp.net/mvc
 
 For connect Frontend and ASP Backend we use Angular.js. http://campus.codeschool.com/courses/shaping-up-with-angular-js/intro
 
