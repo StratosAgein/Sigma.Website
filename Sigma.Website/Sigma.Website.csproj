@@ -137,7 +137,6 @@
     <Compile Include="Controllers\EquipoController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\JugadorController.cs" />
     <Compile Include="Controllers\OrganizationalUnitController.cs" />
     <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Global.asax.cs">
@@ -160,8 +159,8 @@
     <Content Include="Angular\app.js" />
     <Content Include="Angular\Equipo\Controller.js" />
     <Content Include="Angular\Equipo\Service.js" />
-    <Content Include="Angular\Jugador\Controller.js" />
-    <Content Include="Angular\Jugador\Service.js" />
+    <Content Include="Angular\Wizard\Controller.js" />
+    <Content Include="Angular\Wizard\Service.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -287,7 +286,6 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Equipo\Index.cshtml" />
-    <Content Include="Views\Jugador\Index.cshtml" />
     <Content Include="Views\OrganizationalUnit\Index.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
     <Content Include="Views\Dashboard\Start.cshtml" />
