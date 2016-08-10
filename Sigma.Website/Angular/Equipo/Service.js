@@ -1,4 +1,4 @@
-﻿app.service("equiposervice", function ($http) {
+﻿Sigma.service("equiposervice", function ($http) {
     //GetAll
     this.GetEquipos = function () {
         return $http.get("Equipo/GetEquipos");

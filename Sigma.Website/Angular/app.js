@@ -1,1 +1,1 @@
-﻿var app = angular.module('Sigma', ['ngRoute']);
+﻿var Sigma = angular.module('Sigma', ['ngRoute']);

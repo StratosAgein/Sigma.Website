@@ -1,6 +1,7 @@
-﻿app.controller("equipocontroller", function ($scope, equiposervice) {
+﻿Sigma.controller("equipocontroller", function ($scope, equiposervice) {
     GetEquipos();
     $scope.showAddUpdate = false;
+    $scope.test = "Hola";
     function GetEquipos() {
         var getData = equiposervice.GetEquipos();
         getData.then(function (response) {
