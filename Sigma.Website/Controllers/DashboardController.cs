@@ -29,6 +29,11 @@ namespace Sigma.Website.Controllers
             return Json(new { Authentication = result}, JsonRequestBehavior.AllowGet);
         }
 
+        public async Task<ActionResult> Wizard()
+        {
+            return View();
+        }
+
         public ActionResult Start()
         {
             return View();
