@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Sigma.Website.Services;
-using Sigma.Website.Models;
+using Sigma.Website.Models.Entities;
 using System.Threading.Tasks;
 
 namespace Sigma.Website.Controllers

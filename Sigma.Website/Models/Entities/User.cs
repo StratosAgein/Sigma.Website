@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Sigma.Website.Models
+namespace Sigma.Website.Models.Entities
 {
     public class User
     {
@@ -16,6 +16,7 @@ namespace Sigma.Website.Models
         public string Phone { get; set; }
         public Role[] Roles { get; set; }
         public float age { get; set; }
+        public string CompanyId { get; set; }
     }
 
     public class Role

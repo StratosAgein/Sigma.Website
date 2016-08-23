@@ -1,4 +1,4 @@
-﻿using Sigma.Website.Models;
+﻿using Sigma.Website.Models.Entities;
 using Sigma.Website.Services;
 using System;
 using System.Collections.Generic;

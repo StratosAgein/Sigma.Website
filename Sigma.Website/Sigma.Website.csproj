@@ -145,14 +145,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Authenticate.cs" />
-    <Compile Include="Models\Company.cs" />
-    <Compile Include="Models\Equipo.cs" />
-    <Compile Include="Models\ErrorViewmodel.cs" />
+    <Compile Include="Models\Entities\Authenticate.cs" />
+    <Compile Include="Models\Entities\Company.cs" />
+    <Compile Include="Models\Enums\CompanyStatus.cs" />
+    <Compile Include="Models\Entities\Equipo.cs" />
+    <Compile Include="Models\Entities\ErrorViewmodel.cs" />
     <Compile Include="Services\CompanyService.cs" />
     <Compile Include="Utils\HttpParameters.cs" />
-    <Compile Include="Models\Jugador.cs" />
-    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Entities\Jugador.cs" />
+    <Compile Include="Models\Entities\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ConnectionService.cs" />
     <Compile Include="Services\EquipoService.cs" />
@@ -163,6 +164,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Angular\app.js" />
+    <Content Include="Angular\Company\Controller.js" />
+    <Content Include="Angular\Company\Service.js" />
     <Content Include="Angular\Equipo\Controller.js" />
     <Content Include="Angular\Equipo\Service.js" />
     <Content Include="Angular\Wizard\Controller.js" />
@@ -301,10 +304,13 @@
     <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Views\Error\AccessDenied.cshtml" />
     <Content Include="Views\Error\InternalServer.cshtml" />
+    <Content Include="Views\Company\Index.cshtml" />
+    <Content Include="Views\Company\Create.cshtml" />
+    <Content Include="Views\Company\Edit.cshtml" />
+    <Content Include="Views\Company\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Company\" />
     <Folder Include="Views\SubDomain\" />
   </ItemGroup>
   <ItemGroup>

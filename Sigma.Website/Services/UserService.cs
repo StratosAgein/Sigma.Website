@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using Sigma.Website.Models;
+using Sigma.Website.Models.Entities;
 using Sigma.Website.Utils;
 using System;
 using System.Collections.Generic;
