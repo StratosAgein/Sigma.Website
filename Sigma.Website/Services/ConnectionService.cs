@@ -37,14 +37,18 @@ namespace Sigma.Website.Services
             return content;
         }
 
-        
+        public async Task<string> GetDataAsync(string action)
+        {
+            string uri = string.Format("{0}/{1}", _serviceUri, action);
+            return await _client.GetStringAsync(uri);
+        }
 
-        public async Task<string> GetData(string action, params KeyValuePair<string, object>[] HttpParameters)
+        public async Task<string> GetDataAsync(string action, params KeyValuePair<string, object>[] HttpParameters)
         {
             string uri = string.Format("{0}/{1}{2}", _serviceUri, action, HttpParametersBuilder(HttpParameters));
             return await _client.GetStringAsync(uri);
         }
-
+        
         private IEnumerable<KeyValuePair<string, string>> HttpPostEncodedBuilder(KeyValuePair<string, string>[] httpParameters)
         {
             List<KeyValuePair<string, string>> keyValues = new List<KeyValuePair<string, string>>();

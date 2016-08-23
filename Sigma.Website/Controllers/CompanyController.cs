@@ -36,12 +36,36 @@ namespace Sigma.Website.Controllers
             return View();
         }
 
+        [HttpPost]
         public async Task<JsonResult> CreateCompany(CompanyViewModel company)
         {
             if (ModelState.IsValid)
             {
                 Company _company = new Company();
                 bool result = await _companyService.CreateCompany(_company);
+
+                return Json(result, JsonRequestBehavior.AllowGet);
+            }
+            return Json(true, JsonRequestBehavior.AllowGet);
+        }
+        [HttpPost]
+        public async Task<JsonResult> EditCompany(CompanyViewModel company)
+        {
+            if (ModelState.IsValid)
+            {
+                Company _company = new Company();
+                bool result = await _companyService.EditCompany(_company);
+
+                return Json(result, JsonRequestBehavior.AllowGet);
+            }
+            return Json(true, JsonRequestBehavior.AllowGet);
+        }
+        [HttpPost]
+        public async Task<JsonResult> DeleteCompany(string companyId)
+        {
+            if (ModelState.IsValid)
+            {
+                bool result = await _companyService.DeleteCompany(companyId);
 
                 return Json(result, JsonRequestBehavior.AllowGet);
             }

@@ -27,7 +27,7 @@ namespace Sigma.Website.Services
 
         public async Task<Authenticate> AuthenticateUser(string Email, string Password)
         {
-            string authenticateData = await _connection.GetData("Authenticate", HttpComposedParameters.Of("Email", Email), HttpComposedParameters.Of("Password", Password));
+            string authenticateData = await _connection.GetDataAsync("Authenticate", HttpComposedParameters.Of("Email", Email), HttpComposedParameters.Of("Password", Password));
             Authenticate authenticateObj = JsonConvert.DeserializeObject<Authenticate>(authenticateData);
             return authenticateObj;
         }

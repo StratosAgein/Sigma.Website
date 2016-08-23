@@ -7,6 +7,7 @@ namespace Sigma.Website.Models
 {
     public class Company
     {
-        public Guid Id { get; set; }
+        public string _id { get; set; }
+        public string Name { get; set; }
     }
 }
