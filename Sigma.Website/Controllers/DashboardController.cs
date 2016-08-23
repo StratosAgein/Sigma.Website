@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace Sigma.Website.Controllers
 {
-    public class DashboardController : Controller
+    public class DashboardController : BaseController
     {
         public UserService _userService { get; set; }
         public DashboardController()
@@ -31,6 +31,7 @@ namespace Sigma.Website.Controllers
 
         public async Task<ActionResult> Wizard()
         {
+            string sub = Subdomain;
             return View();
         }
 
