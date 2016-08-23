@@ -134,6 +134,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\SubdomainRoute.cs" />
+    <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\EquipoController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
@@ -145,8 +146,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Authenticate.cs" />
+    <Compile Include="Models\Company.cs" />
     <Compile Include="Models\Equipo.cs" />
     <Compile Include="Models\ErrorViewmodel.cs" />
+    <Compile Include="Services\CompanyService.cs" />
     <Compile Include="Utils\HttpParameters.cs" />
     <Compile Include="Models\Jugador.cs" />
     <Compile Include="Models\User.cs" />
@@ -156,6 +159,7 @@
     <Compile Include="Services\JugadorService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Utils\KeyValuePairToJSON.cs" />
+    <Compile Include="ViewModels\CompanyViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Angular\app.js" />
@@ -300,6 +304,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Company\" />
     <Folder Include="Views\SubDomain\" />
   </ItemGroup>
   <ItemGroup>

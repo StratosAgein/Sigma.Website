@@ -31,7 +31,7 @@ namespace Sigma.Website.Controllers
 
         public async Task<ActionResult> Wizard()
         {
-            string sub = Subdomain;
+            string sub = Company;
             return View();
         }
 

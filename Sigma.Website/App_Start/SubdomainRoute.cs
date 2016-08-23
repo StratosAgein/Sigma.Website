@@ -15,7 +15,7 @@ namespace Sigma.Website
         {
             var routeData = base.GetRouteData(httpContext);
             if (routeData == null) return null; // Only look at the subdomain if this route matches in the first place.
-            string subdomain = httpContext.Request.Params["subdomain"]; // A subdomain specified as a query parameter takes precedence over the hostname.
+            string subdomain = httpContext.Request.Params["Company"]; // A subdomain specified as a query parameter takes precedence over the hostname.
             if (subdomain == null)
             {
                 string host = httpContext.Request.Headers["Host"];
@@ -24,15 +24,15 @@ namespace Sigma.Website
                     subdomain = host.Substring(0, index);
             }
             if (subdomain != null)
-                routeData.Values["subdomain"] = subdomain;
+                routeData.Values["Company"] = subdomain;
             return routeData;
         }
 
         public override VirtualPathData GetVirtualPath(RequestContext requestContext, RouteValueDictionary values)
         {
-            object subdomainParam = requestContext.HttpContext.Request.Params["subdomain"];
+            object subdomainParam = requestContext.HttpContext.Request.Params["Company"];
             if (subdomainParam != null)
-                values["subdomain"] = subdomainParam;
+                values["Company"] = subdomainParam;
             return base.GetVirtualPath(requestContext, values);
         }
     }

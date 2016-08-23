@@ -8,9 +8,9 @@ namespace Sigma.Website.Controllers
 {
     public class BaseController : Controller
     {
-        protected string Subdomain
+        protected string Company
         {
-            get { return (string)Request.RequestContext.RouteData.Values["subdomain"]; }
+            get { return (string)Request.RequestContext.RouteData.Values["Company"]; }
         }
         public BaseController()
         {
