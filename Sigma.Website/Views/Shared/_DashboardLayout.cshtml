@@ -203,9 +203,10 @@
 
                     <div class="clearfix"></div>
 
-                    @RenderBody()
-
-                    
+                    <div id="pjax-container">
+                        @RenderBody()
+                    </div>
+                                        
                 </div>
             </div>
             <!-- /page content -->
@@ -234,6 +235,14 @@
 
     <!-- Custom Theme Scripts -->
     <script src="~/bower_components/gentelella/build/js/custom.js"></script>
+    <!-- Pjax -->
+    <script src="~/bower_components/jquery-pjax/jquery.pjax.js"></script>
+
+    <script>
+        (function () {
+            $(document).pjax('a', '#pjax-container');
+        })()
+    </script>
 
     @RenderSection("scripts", required: false)
 </body>

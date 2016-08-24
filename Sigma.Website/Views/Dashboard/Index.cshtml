@@ -4,9 +4,11 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Inicio</h2>
+<section ng-controller="DashboardController">
+    <h2>Inicio</h2>
 
-<button id="send" type="submit" class="btn btn-success" ng-click="DashboardNavigate()">Crear Balance ScoreCard</button>
+    <button id="send" type="submit" class="btn btn-success" ng-click="DashboardNavigate()">Crear Balance ScoreCard</button>
+</section>
 
 
 @section Scripts{
