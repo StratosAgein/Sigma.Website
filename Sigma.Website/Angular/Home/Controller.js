@@ -1,4 +1,4 @@
-﻿Sigma.controller("HomeController", function ($scope, HomeService) {
+﻿Sigma.controller("HomeController", function ($scope, $window, HomeService) {
 
     $scope.showAddUpdate = false;
     $scope.LoginButtonText = "Login";
@@ -14,9 +14,9 @@
             $scope.LoginButtonText = "Login";
             if (response.data.Authentication.Success == true) {
                 if (typeof (Storage) !== "undefined") {
-                    sessionStorage.setItem('Token', response.data.Authentication.Token);
+                    localStorage.setItem('AccessToken', response.data.Authentication.Token);
 
-
+                    $window.location.href = '/Dashboard/Index';
                 } else {
                     // Sorry! No Web Storage support..
                 }

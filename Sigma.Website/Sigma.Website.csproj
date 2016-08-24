@@ -166,6 +166,8 @@
     <Content Include="Angular\app.js" />
     <Content Include="Angular\Company\Controller.js" />
     <Content Include="Angular\Company\Service.js" />
+    <Content Include="Angular\Dashboard\Controller.js" />
+    <Content Include="Angular\Dashboard\Service.js" />
     <Content Include="Angular\Equipo\Controller.js" />
     <Content Include="Angular\Equipo\Service.js" />
     <Content Include="Angular\Home\Controller.js" />
@@ -308,6 +310,7 @@
     <Content Include="Views\Company\Create.cshtml" />
     <Content Include="Views\Company\Edit.cshtml" />
     <Content Include="Views\Company\Delete.cshtml" />
+    <Content Include="Views\Dashboard\Wizard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
