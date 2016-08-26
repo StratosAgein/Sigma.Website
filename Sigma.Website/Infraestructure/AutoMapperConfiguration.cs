@@ -17,8 +17,14 @@ namespace Sigma.Website.Infraestructure
             MapperConfiguration config = new MapperConfiguration(cfg =>
             {
                                 
-                cfg.CreateMap<Company, CompanyViewModel> ();
-                
+                cfg.CreateMap<BalanceScoreCard, BalanceScoreCardViewModel> ();
+                cfg.CreateMap<Client, ClientViewModel>();
+                cfg.CreateMap<Company, CompanyViewModel>();
+                cfg.CreateMap<Metric, MetricViewModel>();
+                cfg.CreateMap<Objective, ObjectiveViewModel>();
+                cfg.CreateMap<Perspective, PerspectiveViewModel>();
+                cfg.CreateMap<User, UserViewModel>();
+
             });
 
             config.AssertConfigurationIsValid();

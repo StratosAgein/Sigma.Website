@@ -138,37 +138,70 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\SubdomainRoute.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BalanceScoreCardController.cs" />
+    <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\EquipoController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MetricController.cs" />
+    <Compile Include="Controllers\ObjectiveController.cs" />
     <Compile Include="Controllers\OrganizationalUnitController.cs" />
     <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\PerspectiveController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infraestructure\AutoMapperConfiguration.cs" />
     <Compile Include="Models\Entities\Authenticate.cs" />
+    <Compile Include="Models\Entities\BalanceScoreCard.cs" />
+    <Compile Include="Models\Entities\Client.cs" />
     <Compile Include="Models\Entities\Company.cs" />
+    <Compile Include="Models\Entities\Metric.cs" />
+    <Compile Include="Models\Entities\Objective.cs" />
+    <Compile Include="Models\Entities\Perspective.cs" />
+    <Compile Include="Models\Enums\AuthenticateStatus.cs" />
+    <Compile Include="Models\Enums\BalanceScoreCardStatus.cs" />
+    <Compile Include="Models\Enums\ClientStatus.cs" />
     <Compile Include="Models\Enums\CompanyStatus.cs" />
     <Compile Include="Models\Entities\Equipo.cs" />
     <Compile Include="Models\Entities\ErrorViewmodel.cs" />
+    <Compile Include="Models\Enums\MetricStatus.cs" />
+    <Compile Include="Models\Enums\ObjectiveStatus.cs" />
+    <Compile Include="Models\Enums\PerspectiveStatus.cs" />
+    <Compile Include="Models\Enums\UserStatus.cs" />
+    <Compile Include="Services\AuthenticateService.cs" />
+    <Compile Include="Services\BalanceScoreCardService.cs" />
+    <Compile Include="Services\ClientService.cs" />
     <Compile Include="Services\CompanyService.cs" />
+    <Compile Include="Services\MetricService.cs" />
+    <Compile Include="Services\ObjectiveService.cs" />
+    <Compile Include="Services\PerspectiveService.cs" />
     <Compile Include="Utils\HttpParameters.cs" />
-    <Compile Include="Models\Entities\Jugador.cs" />
     <Compile Include="Models\Entities\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ConnectionService.cs" />
     <Compile Include="Services\EquipoService.cs" />
-    <Compile Include="Services\JugadorService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Utils\KeyValuePairToJSON.cs" />
+    <Compile Include="ViewModels\BalanceScoreCardViewModel.cs" />
+    <Compile Include="ViewModels\ClientViewModel.cs" />
     <Compile Include="ViewModels\CompanyViewModel.cs" />
+    <Compile Include="ViewModels\MetricViewModel.cs" />
+    <Compile Include="ViewModels\ObjectiveViewModel.cs" />
+    <Compile Include="ViewModels\PerspectiveViewModel.cs" />
+    <Compile Include="ViewModels\UserViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Angular\app.js" />
+    <Content Include="Angular\BalanceScoreCard\Controller.js" />
+    <Content Include="Angular\BalanceScoreCard\Service.js" />
+    <Content Include="Angular\Client\Controller.js" />
+    <Content Include="Angular\Client\Service.js" />
     <Content Include="Angular\Company\Controller.js" />
     <Content Include="Angular\Company\Service.js" />
     <Content Include="Angular\Dashboard\Controller.js" />
@@ -177,6 +210,14 @@
     <Content Include="Angular\Equipo\Service.js" />
     <Content Include="Angular\Home\Controller.js" />
     <Content Include="Angular\Home\Service.js" />
+    <Content Include="Angular\Metric\Controller.js" />
+    <Content Include="Angular\Metric\Service.js" />
+    <Content Include="Angular\Objective\Controller.js" />
+    <Content Include="Angular\Objective\Service.js" />
+    <Content Include="Angular\Perspective\Controller.js" />
+    <Content Include="Angular\Perspective\Service.js" />
+    <Content Include="Angular\User\Controller.js" />
+    <Content Include="Angular\User\Service.js" />
     <Content Include="Angular\Wizard\Controller.js" />
     <Content Include="Angular\Wizard\Service.js" />
     <Content Include="Content\bootstrap.css" />
@@ -316,9 +357,16 @@
     <Content Include="Views\Company\Edit.cshtml" />
     <Content Include="Views\Company\Delete.cshtml" />
     <Content Include="Views\Dashboard\Wizard.cshtml" />
+    <Content Include="Views\BalanceScoreCard\Index.cshtml" />
+    <Content Include="Views\Client\Index.cshtml" />
+    <Content Include="Views\Metric\Index.cshtml" />
+    <Content Include="Views\Objective\Index.cshtml" />
+    <Content Include="Views\Perspective\Index.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Account\" />
     <Folder Include="Views\SubDomain\" />
   </ItemGroup>
   <ItemGroup>
