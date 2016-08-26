@@ -1,4 +1,5 @@
-﻿using Sigma.Website.Models.Entities;
+﻿using Sigma.Website.Infraestructure;
+using Sigma.Website.Models.Entities;
 using Sigma.Website.Services;
 using Sigma.Website.ViewModels;
 using System;
@@ -41,7 +42,7 @@ namespace Sigma.Website.Controllers
         {
             if (ModelState.IsValid)
             {
-                Company _company = new Company();
+                Company _company = AutoMapperConfiguration.Mapper.Map<Company>(company);
                 bool result = await _companyService.CreateCompany(_company);
 
                 return Json(result, JsonRequestBehavior.AllowGet);
