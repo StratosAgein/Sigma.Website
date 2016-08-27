@@ -7,7 +7,6 @@ namespace Sigma.Website.Models.Enums
 {
     public enum DocumentType
     {
-        //Seleccione tipo
         None = 0,
         //Cédula de ciudadanía
         CC = 1,
