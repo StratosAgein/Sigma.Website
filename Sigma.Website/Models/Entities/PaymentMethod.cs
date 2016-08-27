@@ -13,5 +13,6 @@ namespace Sigma.Website.Models.Entities
         public string Name { get; set; }
         public string Alias { get; set; }
         public PaymentMethodType PaymentMethodType { get; set; }
+        public DateTime RegisterTime { get; set; }
     }
 }

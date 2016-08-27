@@ -7,6 +7,7 @@ namespace Sigma.Website.Models.Entities
 {
     public class Metric
     {
+        public string _id { get; set; }
         public string Alias { get; set; }
         public string Code { get; set; }
         public string Description { get; set; }
@@ -21,5 +22,6 @@ namespace Sigma.Website.Models.Entities
         public string ResponsibleRegistration { get; set; }
         public string Trend { get; set; }
         public int UnitOfMeasurement { get; set; }
+        public DateTime RegisterTime { get; set; }
     }
 }

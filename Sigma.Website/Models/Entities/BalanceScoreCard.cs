@@ -8,6 +8,7 @@ namespace Sigma.Website.Models.Entities
 {
     public class BalanceScoreCard
     {
+        public string _id { get; set; }
         public BalanceScoreCardStatus BalanceScoreCardStatus { get; set; }
         public DateTime RegisterTime { get; set; }
         public string Name { get; set; }

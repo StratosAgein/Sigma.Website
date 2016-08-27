@@ -175,6 +175,8 @@
     <Compile Include="Models\Enums\DocumentType.cs" />
     <Compile Include="Models\Enums\MetricStatus.cs" />
     <Compile Include="Models\Enums\ObjectiveStatus.cs" />
+    <Compile Include="Models\Enums\PaymentMethodStatus.cs" />
+    <Compile Include="Models\Enums\PaymentMethodType.cs" />
     <Compile Include="Models\Enums\PerspectiveStatus.cs" />
     <Compile Include="Models\Enums\UserStatus.cs" />
     <Compile Include="Services\AuthenticateService.cs" />

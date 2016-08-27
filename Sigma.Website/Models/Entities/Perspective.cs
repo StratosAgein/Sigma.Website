@@ -8,6 +8,7 @@ namespace Sigma.Website.Models.Entities
 {
     public class Perspective
     {
+        public string _id { get; set; }
         public PerspectiveStatus PerspectiveStatus { get; set; }
         public string Name { get; set; }
         public int Weight { get; set; }
