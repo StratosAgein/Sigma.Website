@@ -163,6 +163,8 @@
     <Compile Include="Models\Entities\Company.cs" />
     <Compile Include="Models\Entities\Metric.cs" />
     <Compile Include="Models\Entities\Objective.cs" />
+    <Compile Include="Models\Entities\OrganizationalUnit.cs" />
+    <Compile Include="Models\Entities\PaymentMethod.cs" />
     <Compile Include="Models\Entities\Perspective.cs" />
     <Compile Include="Models\Enums\AuthenticateStatus.cs" />
     <Compile Include="Models\Enums\BalanceScoreCardStatus.cs" />
@@ -170,6 +172,7 @@
     <Compile Include="Models\Enums\CompanyStatus.cs" />
     <Compile Include="Models\Entities\Equipo.cs" />
     <Compile Include="Models\Entities\ErrorViewmodel.cs" />
+    <Compile Include="Models\Enums\DocumentType.cs" />
     <Compile Include="Models\Enums\MetricStatus.cs" />
     <Compile Include="Models\Enums\ObjectiveStatus.cs" />
     <Compile Include="Models\Enums\PerspectiveStatus.cs" />
