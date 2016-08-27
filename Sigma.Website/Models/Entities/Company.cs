@@ -12,6 +12,7 @@ namespace Sigma.Website.Models.Entities
         public string ShortName { get; set; }
         public string LongName { get; set; }
         public string OwnerClient { get; set; }
+        public DateTime RegisterTime { get; set; }
         public CompanyStatus CompanyStatus { get; set; }
 
     }

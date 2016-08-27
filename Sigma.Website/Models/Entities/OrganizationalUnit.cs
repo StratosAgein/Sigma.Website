@@ -5,10 +5,9 @@ using System.Web;
 
 namespace Sigma.Website.Models.Entities
 {
-    public class Objective
+    public class OrganizationalUnit
     {
         public string Name { get; set; }
-        public string Alias { get; set; }
         public string Description { get; set; }
     }
 }
