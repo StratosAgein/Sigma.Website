@@ -18,9 +18,9 @@ namespace Sigma.Website.Services
             _connection = new ConnectionService();
         }
 
-        public async Task<BalanceScoreCard> GetCompanyById(string BalanceScoreCardId)
+        public async Task<BalanceScoreCard> GetBalanceScoreCardById(string BalanceScoreCardId)
         {
-            string result = await _connection.GetDataAsync("GetCompanyById", HttpComposedParameters.Of("Id", BalanceScoreCardId));
+            string result = await _connection.GetDataAsync("GetBalanceScoreCardById", HttpComposedParameters.Of("Id", BalanceScoreCardId));
             BalanceScoreCard balanceScoreCardObj = JsonConvert.DeserializeObject<BalanceScoreCard>(result);
             return balanceScoreCardObj;
         }
@@ -32,19 +32,19 @@ namespace Sigma.Website.Services
             return balancesObj;
         }
 
-        public async Task<bool> CreateCompany(BalanceScoreCard company)
+        public async Task<bool> CreateBalanceScoreCard(BalanceScoreCard BalanceScoreCard)
         {
-            string companySerialized = JsonConvert.SerializeObject(company);
+            string BalanceScoreCardSerialized = JsonConvert.SerializeObject(BalanceScoreCard);
             return true;
         }
 
-        public async Task<bool> EditCompany(BalanceScoreCard company)
+        public async Task<bool> EditBalanceScoreCard(BalanceScoreCard BalanceScoreCard)
         {
-            string companySerialized = JsonConvert.SerializeObject(company);
+            string BalanceScoreCardSerialized = JsonConvert.SerializeObject(BalanceScoreCard);
             return true;
         }
 
-        public async Task<bool> DeleteCompany(string companyId)
+        public async Task<bool> DeleteBalanceScoreCard(string BalanceScoreCardId)
         {
             return true;
         }

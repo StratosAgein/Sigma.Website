@@ -37,6 +37,19 @@ namespace Sigma.Website.Controllers
             return View();
         }
 
+
+        [HttpGet]
+        public async Task<JsonResult> GetAllCompany()
+        {
+            IEnumerable<Company> result = await _companyService.GetAllCompanies();
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+        [HttpGet]
+        public async Task<JsonResult> GetCompanyById(string CompanyId)
+        {
+            Company result = await _companyService.GetCompanyById(CompanyId);
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
         [HttpPost]
         public async Task<JsonResult> CreateCompany(CompanyViewModel company)
         {
@@ -54,7 +67,7 @@ namespace Sigma.Website.Controllers
         {
             if (ModelState.IsValid)
             {
-                Company _company = new Company();
+                Company _company = AutoMapperConfiguration.Mapper.Map<Company>(company);
                 bool result = await _companyService.EditCompany(_company);
 
                 return Json(result, JsonRequestBehavior.AllowGet);
