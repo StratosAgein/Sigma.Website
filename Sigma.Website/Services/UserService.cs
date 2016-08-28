@@ -32,6 +32,35 @@ namespace Sigma.Website.Services
             return authenticateObj;
         }
 
+        public async Task<User> GetUserById(string UserId)
+        {
+            string result = await _connection.GetDataAsync("GetUserById", HttpComposedParameters.Of("Id", UserId));
+            User UserObj = JsonConvert.DeserializeObject<User>(result);
+            return UserObj;
+        }
 
+        public async Task<IEnumerable<User>> GetAllUsers()
+        {
+            string result = await _connection.GetDataAsync("GetAllUser");
+            IEnumerable<User> companiesObj = JsonConvert.DeserializeObject<IEnumerable<User>>(result);
+            return companiesObj;
+        }
+
+        public async Task<bool> CreateUser(User User)
+        {
+            string UserSerialized = JsonConvert.SerializeObject(User);
+            return true;
+        }
+
+        public async Task<bool> EditUser(User User)
+        {
+            string UserSerialized = JsonConvert.SerializeObject(User);
+            return true;
+        }
+
+        public async Task<bool> DeleteUser(string UserId)
+        {
+            return true;
+        }
     }
 }

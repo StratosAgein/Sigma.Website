@@ -149,7 +149,6 @@
     <Compile Include="Controllers\MetricController.cs" />
     <Compile Include="Controllers\ObjectiveController.cs" />
     <Compile Include="Controllers\OrganizationalUnitController.cs" />
-    <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\PerspectiveController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -351,7 +350,6 @@
     <Content Include="Views\OrganizationalUnit\Index.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
     <Content Include="Views\Dashboard\Start.cshtml" />
-    <Content Include="Views\Person\Index.cshtml" />
     <Content Include="Views\Shared\_HomeLayout.cshtml" />
     <Content Include="Views\Shared\_ErrorLayout.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
@@ -368,6 +366,21 @@
     <Content Include="Views\Objective\Index.cshtml" />
     <Content Include="Views\Perspective\Index.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\BalanceScoreCard\Create.cshtml" />
+    <Content Include="Views\BalanceScoreCard\Edit.cshtml" />
+    <Content Include="Views\BalanceScoreCard\Delete.cshtml" />
+    <Content Include="Views\Client\Create.cshtml" />
+    <Content Include="Views\Client\Edit.cshtml" />
+    <Content Include="Views\Client\Delete.cshtml" />
+    <Content Include="Views\Metric\Create.cshtml" />
+    <Content Include="Views\Metric\Edit.cshtml" />
+    <Content Include="Views\Metric\Delete.cshtml" />
+    <Content Include="Views\Objective\Create.cshtml" />
+    <Content Include="Views\Objective\Edit.cshtml" />
+    <Content Include="Views\Objective\Delete.cshtml" />
+    <Content Include="Views\Perspective\Create.cshtml" />
+    <Content Include="Views\Perspective\Edit.cshtml" />
+    <Content Include="Views\Perspective\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
