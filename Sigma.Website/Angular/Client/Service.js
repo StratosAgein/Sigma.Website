@@ -1,17 +1,53 @@
 ﻿Sigma.service("ClientService", function ($http) {
-    //GetAll
-    this.GetAllClients = function () {
-        return $http.get("Client/GetAllClients");
-    };
-    //GetById
-    this.GetClient = function (ClientId) {
+    //CreateClient
+    this.CreateClient = function (Client) {
         var response = $http({
             method: "post",
-            url: "Client/GetClientById",
+            url: "/Client/CreateClient",
+            data: JSON.stringify(Client),
+            dataType: "json"
+        });
+        return response;
+    }
+
+    //EditClient
+    this.EditClient = function (Client) {
+        var response = $http({
+            method: "post",
+            url: "/Client/EditClient",
+            data: JSON.stringify(Client),
+            dataType: "json"
+        });
+        return response;
+    }
+
+    //DeleteClient
+    this.DeleteClient = function (ClientId) {
+        var response = $http({
+            method: "post",
+            url: "/Client/DeleteClient",
             params: {
-                ClientId: JSON.stringify(ClientId)
+                ClientId: ClientId
             }
         });
         return response;
     }
+
+    //GetAll
+    this.GetAllClients = function () {
+        return $http.get("/Client/GetAllClients");
+    };
+
+    //GetById
+    this.GetClientById = function (ClientId) {
+        var response = $http({
+            method: "post",
+            url: "/Client/GetClientById",
+            params: {
+                ClientId: ClientId
+            }
+        });
+        return response;
+    }
+
 });

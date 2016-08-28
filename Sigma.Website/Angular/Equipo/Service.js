@@ -7,7 +7,7 @@
     this.GetEquipo = function (Id) {
         var response = $http({
             method: "post",
-            url: "Equipo/GetEquipo",
+            url: "/Equipo/GetEquipo",
             params: {
                 Id: JSON.stringify(Id)
             }
@@ -18,7 +18,7 @@
     this.UpdateEquipo = function (Equipo) {
         var response = $http({
             method: "post",
-            url: "Equipo/UpdateEquipo",
+            url: "/Equipo/UpdateEquipo",
             data: JSON.stringify(Equipo),
             dataType: "json"
         });
@@ -28,7 +28,7 @@
     this.AddEquipo = function (Equipo) {
         var response = $http({
             method: "post",
-            url: "Equipo/AddEquipo",
+            url: "/Equipo/AddEquipo",
             data: JSON.stringify(Equipo),
             dataType: "json"
         });
@@ -39,9 +39,9 @@
     this.DeleteEquipo = function (Id) {
         var response = $http({
             method: "post",
-            url: "Equipo/DeleteEquipo",
+            url: "/Equipo/DeleteEquipo",
             params: {
-                Id: JSON.stringify(Id)
+                Id: Id
             }
         });
         return response;

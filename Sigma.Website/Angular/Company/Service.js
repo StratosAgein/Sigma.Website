@@ -1,17 +1,53 @@
 ﻿Sigma.service("CompanyService", function ($http) {
-    //GetAll
-    this.GetCompanies = function () {
-        return $http.get("Company/GetAllCompanies");
-    };
-    //GetById
-    this.GetCompany = function (CompanyId) {
+    //CreateCompany
+    this.CreateCompany = function (Company) {
         var response = $http({
             method: "post",
-            url: "Company/GetCompanyById",
+            url: "/Company/CreateCompany",
+            data: JSON.stringify(Company),
+            dataType: "json"
+        });
+        return response;
+    }
+
+    //EditCompany
+    this.EditCompany = function (Company) {
+        var response = $http({
+            method: "post",
+            url: "/Company/EditCompany",
+            data: JSON.stringify(Company),
+            dataType: "json"
+        });
+        return response;
+    }
+
+    //DeleteCompany
+    this.DeleteCompany = function (CompanyId) {
+        var response = $http({
+            method: "post",
+            url: "/Company/DeleteCompany",
             params: {
-                CompanyId: JSON.stringify(CompanyId)
+                CompanyId: CompanyId
             }
         });
         return response;
     }
+
+    //GetAll
+    this.GetCompanies = function () {
+        return $http.get("/Company/GetAllCompanies");
+    };
+
+    //GetById
+    this.GetCompanyById = function (CompanyId) {
+        var response = $http({
+            method: "post",
+            url: "/Company/GetCompanyById",
+            params: {
+                CompanyId: CompanyId
+            }
+        });
+        return response;
+    }
+
 });
