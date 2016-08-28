@@ -239,9 +239,38 @@
     <script src="~/bower_components/jquery-pjax/jquery.pjax.js"></script>
 
     <script>
+        var $Sigma = {};
+
         (function () {
             $(document).pjax('a', '#pjax-container');
-        })()
+        })();
+
+        $Sigma.Hostname = function () {
+            var urlParts = window.location.hostname.split('.')
+            if (urlParts[0] === 'localhost') {
+                $Sigma.IsOnLocalhost = true;
+                result.subdomain = '';
+                result.domain = urlParts[0];
+                result.type = '';
+            }
+            else if (urlParts[0] === 'sigma') {
+                $Sigma.IsOnLocalhost = false;
+                result.subdomain = '';
+                result.domain = urlParts[0];
+                result.type = urlParts[1];
+            }
+            else {
+                $Sigma.IsOnLocalhost = false;
+                result.subdomain = urlParts[0];
+                result.domain = urlParts[1];
+                result.type = urlParts[2];
+            }
+            
+            
+            
+            return result;
+        }
+
     </script>
 
     @RenderSection("scripts", required: false)

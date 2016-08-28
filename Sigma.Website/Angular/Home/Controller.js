@@ -2,24 +2,44 @@
 
     $scope.showAddUpdate = false;
     $scope.LoginButtonText = "Login";
+    $scope.WelcomeText = "Welcome";
 
     $scope.submitToLogin = function () {
         $scope.MVCAction = "Login";
         $scope.MVCController = "Dashboard";
 
+        $scope.LoginButtonText = "Validating...";
         var loginProcess = HomeService.Login($scope.Company, $scope.Username, $scope.Password);
 
         loginProcess.then(function (response) {
-            console.log(response.data.Authentication);
-            $scope.LoginButtonText = "Login";
+            
             if (response.data.Authentication.Success == true) {
                 if (typeof (Storage) !== "undefined") {
+                    $scope.WelcomeText = "Loading your experience";
+                    $scope.LoginButtonText = "Login";
                     localStorage.setItem('AccessToken', response.data.Authentication.Token);
 
-                    $window.location.href = '/Dashboard/Index';
+                    $window.location.href = '/Dashboard/Index?Company=' + $scope.Company;
                 } else {
                     // Sorry! No Web Storage support..
                 }
+            }
+            else {
+                $scope.WelcomeText = "Something was wrong, please verify email and password";
+                $scope.LoginButtonText = "Retry";
+            }
+        },
+        function (response) {
+            debugger;
+            switch (response.status) {
+                case 500:
+                    $scope.LoginButtonText = "Retry";
+                    alert('Servicio no disponible, intente más tarde');
+                    break;
+                default:
+                    $scope.LoginButtonText = "Retry";
+                    alert('Error desconocido');
+                    break;
             }
         })
     }

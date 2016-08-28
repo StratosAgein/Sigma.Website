@@ -1,7 +1,6 @@
 ﻿Sigma.service("HomeService", function ($http) {
     this.Login = function (company, username, password) {
-        LoginButtonText = "Validating...";
-
+        
         var response = $http({
             method: "post",
             url: "/Dashboard/Login",
