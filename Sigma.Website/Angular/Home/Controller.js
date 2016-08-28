@@ -30,7 +30,6 @@
             }
         },
         function (response) {
-            debugger;
             switch (response.status) {
                 case 500:
                     $scope.LoginButtonText = "Retry";
