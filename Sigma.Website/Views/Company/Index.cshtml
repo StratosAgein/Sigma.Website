@@ -6,11 +6,11 @@
 
 <h2>Index</h2>
 
-<section ng-controller="CompanyController" ng-init="InitializeView()">
+<section ng-controller="CompanyController" ng-init="InitializeIndexView()">
     <section>
         <ul>
             <li ng-repeat="item in companies">
-                {{item.LongName}} - <a href="#">Test link</a>
+                {{item.LongName}} - <a href="@Url.Action("Edit","Company")&CompanyId={{item._id}}">Edit</a>
             </li>
         </ul>
     </section>

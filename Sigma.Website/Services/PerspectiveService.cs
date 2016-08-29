@@ -21,15 +21,17 @@ namespace Sigma.Website.Services
 
         public async Task<Perspective> GetPerspectiveById(string PerspectiveId)
         {
-            string result = await _connection.GetDataAsync("GetPerspectiveById", HttpComposedParameters.Of("Id", PerspectiveId));
-            Perspective PerspectiveObj = JsonConvert.DeserializeObject<Perspective>(result);
-            return PerspectiveObj;
+            string jsonResult = await _connection.GetDataAsync("GetPerspectiveById", HttpComposedParameters.Of("PerspectiveId", PerspectiveId));
+            dynamic result = JObject.Parse(jsonResult);
+            JObject perspectiveObj = (JObject)result.Company;
+
+            return perspectiveObj.ToObject<Perspective>();
         }
 
         public async Task<IEnumerable<Perspective>> GetAllPerspective()
         {
-            string resultText = await _connection.GetDataAsync("GetAllPerspective");
-            dynamic result = JObject.Parse(resultText);
+            string jsonResult = await _connection.GetDataAsync("GetAllPerspective");
+            dynamic result = JObject.Parse(jsonResult);
             JArray companiesArray = (JArray)result.Perspectives;
 
             return companiesArray.ToObject<IEnumerable<Perspective>>();

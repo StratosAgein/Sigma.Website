@@ -35,15 +35,17 @@ namespace Sigma.Website.Services
 
         public async Task<User> GetUserById(string UserId)
         {
-            string result = await _connection.GetDataAsync("GetUserById", HttpComposedParameters.Of("Id", UserId));
-            User UserObj = JsonConvert.DeserializeObject<User>(result);
-            return UserObj;
+            string jsonResult = await _connection.GetDataAsync("GetUserById", HttpComposedParameters.Of("UserId", UserId));
+            dynamic result = JObject.Parse(jsonResult);
+            JObject userObj = (JObject)result.User;
+
+            return userObj.ToObject<User>();
         }
 
         public async Task<IEnumerable<User>> GetAllUsers()
         {
-            string resultText = await _connection.GetDataAsync("GetAllUser");
-            dynamic result = JObject.Parse(resultText);
+            string jsonResult = await _connection.GetDataAsync("GetAllUser");
+            dynamic result = JObject.Parse(jsonResult);
             JArray companiesArray = (JArray)result.Users;
 
             return companiesArray.ToObject<IEnumerable<User>>();

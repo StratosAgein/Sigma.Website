@@ -21,15 +21,17 @@ namespace Sigma.Website.Services
 
         public async Task<BalanceScoreCard> GetBalanceScoreCardById(string BalanceScoreCardId)
         {
-            string result = await _connection.GetDataAsync("GetBalanceScoreCardById", HttpComposedParameters.Of("Id", BalanceScoreCardId));
-            BalanceScoreCard balanceScoreCardObj = JsonConvert.DeserializeObject<BalanceScoreCard>(result);
-            return balanceScoreCardObj;
+            string jsonResult = await _connection.GetDataAsync("GetBalanceScoreCardById", HttpComposedParameters.Of("BalanceScoreCardId", BalanceScoreCardId));
+            dynamic result = JObject.Parse(jsonResult);
+            JObject balanceObj = (JObject)result.BalanceScoreCard;
+
+            return balanceObj.ToObject<BalanceScoreCard>();
         }
 
         public async Task<IEnumerable<BalanceScoreCard>> GetAllBalanceScoreCard()
         {
-            string resultText = await _connection.GetDataAsync("GetAllBalanceScoreCard");
-            dynamic result = JObject.Parse(resultText);
+            string jsonResult = await _connection.GetDataAsync("GetAllBalanceScoreCard");
+            dynamic result = JObject.Parse(jsonResult);
             JArray companiesArray = (JArray)result.Balances;
 
             return companiesArray.ToObject<IEnumerable<BalanceScoreCard>>();

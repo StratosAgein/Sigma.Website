@@ -41,7 +41,7 @@
     //GetById
     this.GetCompanyById = function (CompanyId) {
         var response = $http({
-            method: "post",
+            method: "get",
             url: "/Company/GetCompanyById",
             params: {
                 CompanyId: CompanyId

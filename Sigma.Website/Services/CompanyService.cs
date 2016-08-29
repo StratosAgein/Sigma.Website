@@ -21,15 +21,17 @@ namespace Sigma.Website.Services
 
         public async Task<Company> GetCompanyById(string companyId)
         {
-            string result = await _connection.GetDataAsync("GetCompanyById", HttpComposedParameters.Of("Id", companyId));
-            Company companyObj = JsonConvert.DeserializeObject<Company>(result);
-            return companyObj;
+            string jsonResult = await _connection.GetDataAsync("GetCompanyById", HttpComposedParameters.Of("CompanyId", companyId));
+            dynamic result = JObject.Parse(jsonResult);
+            JObject companyObj = (JObject)result.Company;
+
+            return companyObj.ToObject<Company>();
         }
 
         public async Task<IEnumerable<Company>> GetAllCompanies()
         {
-            string resultText = await _connection.GetDataAsync("GetAllCompanies");
-            dynamic result = JObject.Parse(resultText);
+            string jsonResult = await _connection.GetDataAsync("GetAllCompanies");
+            dynamic result = JObject.Parse(jsonResult);
             JArray companiesArray = (JArray)result.Companies;
             
             return companiesArray.ToObject<IEnumerable<Company>>();

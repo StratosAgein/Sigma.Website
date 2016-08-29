@@ -28,11 +28,11 @@ namespace Sigma.Website.Controllers
         {
             return View();
         }
-        public async Task<ActionResult> Edit(Guid CompanyId)
+        public async Task<ActionResult> Edit(string CompanyId)
         {
             return View();
         }
-        public async Task<ActionResult> Delete(Guid CompanyId)
+        public async Task<ActionResult> Delete(string CompanyId)
         {
             return View();
         }
