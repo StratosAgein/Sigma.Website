@@ -4,7 +4,7 @@
     $scope.test = "Hola";
 
     $scope.companies = [];
-
+    $scope.Company = {};
 
     $scope.InitializeIndexView = function () {
 
@@ -26,11 +26,16 @@
             var getCompanyProcess = CompanyService.GetCompanyById(CompanyId);
 
             getCompanyProcess.then(function (response) {
-                console.log(response);
+                $scope.Company = response.data;
+                console.log(response.data);
             },
             function (response) {
                 console.log(response);
             })
         }
+    }
+
+    $scope.EditCompany = function () {
+        CompanyService.EditCompany($scope.Company.LongName, $scope.Company.ShortName, $scope.Company.CompanyStatus);
     }
 });
