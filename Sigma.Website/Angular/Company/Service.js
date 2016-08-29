@@ -34,7 +34,7 @@
     }
 
     //GetAll
-    this.GetCompanies = function () {
+    this.GetAllCompanies = function () {
         return $http.get("/Company/GetAllCompanies");
     };
 

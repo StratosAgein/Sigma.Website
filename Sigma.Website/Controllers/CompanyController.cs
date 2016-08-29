@@ -39,7 +39,7 @@ namespace Sigma.Website.Controllers
 
 
         [HttpGet]
-        public async Task<JsonResult> GetAllCompany()
+        public async Task<JsonResult> GetAllCompanies()
         {
             IEnumerable<Company> result = await _companyService.GetAllCompanies();
             return Json(result, JsonRequestBehavior.AllowGet);

@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Sigma.Website.Models.Entities;
 using Sigma.Website.Utils;
 using System;
@@ -27,9 +28,13 @@ namespace Sigma.Website.Services
 
         public async Task<IEnumerable<Company>> GetAllCompanies()
         {
-            string result = await _connection.GetDataAsync("GetAllCompanies");
-            IEnumerable<Company> companiesObj = JsonConvert.DeserializeObject<IEnumerable<Company>>(result);
-            return companiesObj;
+            string resultText = await _connection.GetDataAsync("GetAllCompanies");
+            dynamic result = JObject.Parse(resultText);
+            JArray companiesArray = (JArray)result.Companies;
+            
+            return companiesArray.ToObject<IEnumerable<Company>>();
+
+
         }
 
         public async Task<bool> CreateCompany(Company company)
