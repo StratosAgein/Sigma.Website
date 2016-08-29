@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Sigma.Website.Models.Entities;
 using Sigma.Website.Utils;
 using System;
@@ -41,9 +42,11 @@ namespace Sigma.Website.Services
 
         public async Task<IEnumerable<User>> GetAllUsers()
         {
-            string result = await _connection.GetDataAsync("GetAllUser");
-            IEnumerable<User> companiesObj = JsonConvert.DeserializeObject<IEnumerable<User>>(result);
-            return companiesObj;
+            string resultText = await _connection.GetDataAsync("GetAllUser");
+            dynamic result = JObject.Parse(resultText);
+            JArray companiesArray = (JArray)result.Users;
+
+            return companiesArray.ToObject<IEnumerable<User>>();
         }
 
         public async Task<bool> CreateUser(User User)

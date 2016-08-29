@@ -33,8 +33,6 @@ namespace Sigma.Website.Services
             JArray companiesArray = (JArray)result.Companies;
             
             return companiesArray.ToObject<IEnumerable<Company>>();
-
-
         }
 
         public async Task<bool> CreateCompany(Company company)

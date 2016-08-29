@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Sigma.Website.Models.Entities;
 using Sigma.Website.Utils;
 using System;
@@ -27,9 +28,11 @@ namespace Sigma.Website.Services
 
         public async Task<IEnumerable<Perspective>> GetAllPerspective()
         {
-            string result = await _connection.GetDataAsync("GetAllPerspective");
-            IEnumerable<Perspective> companiesObj = JsonConvert.DeserializeObject<IEnumerable<Perspective>>(result);
-            return companiesObj;
+            string resultText = await _connection.GetDataAsync("GetAllPerspective");
+            dynamic result = JObject.Parse(resultText);
+            JArray companiesArray = (JArray)result.Perspectives;
+
+            return companiesArray.ToObject<IEnumerable<Perspective>>();
         }
 
         public async Task<bool> CreatePerspective(Perspective Perspective)

@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Sigma.Website.Models.Entities;
 using Sigma.Website.Utils;
 using System;
@@ -27,9 +28,11 @@ namespace Sigma.Website.Services
 
         public async Task<IEnumerable<BalanceScoreCard>> GetAllBalanceScoreCard()
         {
-            string result = await _connection.GetDataAsync("GetAllBalanceScoreCard");
-            IEnumerable<BalanceScoreCard> balancesObj = JsonConvert.DeserializeObject<IEnumerable<BalanceScoreCard>>(result);
-            return balancesObj;
+            string resultText = await _connection.GetDataAsync("GetAllBalanceScoreCard");
+            dynamic result = JObject.Parse(resultText);
+            JArray companiesArray = (JArray)result.Balances;
+
+            return companiesArray.ToObject<IEnumerable<BalanceScoreCard>>();
         }
 
         public async Task<bool> CreateBalanceScoreCard(BalanceScoreCard BalanceScoreCard)

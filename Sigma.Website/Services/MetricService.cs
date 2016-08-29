@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Sigma.Website.Models.Entities;
 using Sigma.Website.Utils;
 using System;
@@ -27,9 +28,11 @@ namespace Sigma.Website.Services
 
         public async Task<IEnumerable<Metric>> GetAllMetrics()
         {
-            string result = await _connection.GetDataAsync("GetAllMetrics");
-            IEnumerable<Metric> companiesObj = JsonConvert.DeserializeObject<IEnumerable<Metric>>(result);
-            return companiesObj;
+            string resultText = await _connection.GetDataAsync("GetAllMetrics");
+            dynamic result = JObject.Parse(resultText);
+            JArray companiesArray = (JArray)result.Metrics;
+
+            return companiesArray.ToObject<IEnumerable<Metric>>();
         }
 
         public async Task<bool> CreateMetric(Metric Metric)
