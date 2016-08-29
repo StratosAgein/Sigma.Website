@@ -1,4 +1,4 @@
-﻿Sigma.controller("CompanyController", function ($scope, CompanyService) {
+﻿Sigma.controller("CompanyController", function ($scope, $window, CompanyService) {
 
     $scope.showAddUpdate = false;
     $scope.test = "Hola";
@@ -36,6 +36,24 @@
     }
 
     $scope.EditCompany = function () {
-        CompanyService.EditCompany($scope.Company.LongName, $scope.Company.ShortName, $scope.Company.CompanyStatus);
+        var editCompanyProcess = CompanyService.EditCompany(
+                                    $scope.Company._id,
+                                    $scope.Company.LongName,
+                                    $scope.Company.ShortName,
+                                    $scope.Company.CompanyStatus,
+                                    $scope.Company.OwnerClient);
+
+        editCompanyProcess.then(function (response) {
+            if (response.data == true) {
+                // edit succesfully
+                $window.location.reload();
+            }
+            else {
+                // can't edit 
+            }
+        },
+            function (response) {
+                console.log(response);
+            });
     }
 });

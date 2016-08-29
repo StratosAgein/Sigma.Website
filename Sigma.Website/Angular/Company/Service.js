@@ -11,14 +11,16 @@
     }
 
     //EditCompany
-    this.EditCompany = function (longName, shortName, companyStatus) {
+    this.EditCompany = function (_id, longName, shortName, companyStatus, ownerClient) {
         var response = $http({
             method: "post",
             url: "/Company/EditCompany",
             params: {
+                _id: _id,
                 ShortName: shortName,
                 LongName: longName,
-                CompanyStatus: companyStatus
+                CompanyStatus: companyStatus,
+                OwnerClient: ownerClient
             }
         });
         return response;

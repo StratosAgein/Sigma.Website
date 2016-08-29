@@ -45,8 +45,17 @@ namespace Sigma.Website.Services
 
         public async Task<bool> EditCompany(Company company)
         {
-            string companySerialized = JsonConvert.SerializeObject(company);
-            return true;
+            string jsonResult = await _connection.PostData("EditCompany",
+                HttpSimpleParameters.Of("Id", company._id),
+                HttpSimpleParameters.Of("ShortName", company.ShortName),
+                HttpSimpleParameters.Of("LongName", company.LongName),
+                HttpSimpleParameters.Of("OwnerClient", company.OwnerClient),
+                HttpSimpleParameters.Of("CompanyStatus", company.CompanyStatus.ToString()),
+                HttpSimpleParameters.Of("RegisterTime", company.RegisterTime.ToString()));
+
+            dynamic result = JObject.Parse(jsonResult);
+            
+            return result.Success;
         }
 
         public async Task<bool> DeleteCompany(string companyId)

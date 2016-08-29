@@ -22,16 +22,13 @@ namespace Sigma.Website.Services
 
         public async Task<string> PostData(string action, params KeyValuePair<string, string>[] HttpParameters)
         {
-            string uri = string.Format("{0}", action);
+            string uri = string.Format("{0}/{1}", _serviceUri, action);
 
-            var client = new HttpClient();
-            client.BaseAddress = new Uri(_serviceUri);
-            var request = new HttpRequestMessage(HttpMethod.Post, "api/" + uri);
+            HttpClient client = new HttpClient();
 
-            var keyValues = new FormUrlEncodedContent(HttpPostEncodedBuilder(HttpParameters));
+            HttpContent keyValues = new FormUrlEncodedContent(HttpPostEncodedBuilder(HttpParameters));
 
-
-            var response = await client.SendAsync(request);
+            var response = await client.PostAsync(uri, keyValues);
             
             string content = await response.Content.ReadAsStringAsync();
             return content;

@@ -72,6 +72,7 @@ namespace Sigma.Website.Controllers
                 bool result = await _companyService.EditCompany(_company);
 
                 return Json(result, JsonRequestBehavior.AllowGet);
+
             }
             return Json(true, JsonRequestBehavior.AllowGet);
         }

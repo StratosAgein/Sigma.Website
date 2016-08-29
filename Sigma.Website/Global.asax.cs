@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sigma.Website.Infraestructure;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +17,9 @@ namespace Sigma.Website
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            //AutoMapper
+            AutoMapperConfiguration.ConfigureMapper();
         }
     }
 }

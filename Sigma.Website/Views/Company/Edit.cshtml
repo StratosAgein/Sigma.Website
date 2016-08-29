@@ -8,9 +8,11 @@
 
 <section ng-controller="CompanyController" ng-init="InitializeEditView()">
     <form ng-submit="EditCompany()">
+        <input type="text" id="_id" name="_id" ng-model="Company._id" placeholder="Type long name" ng-value="Company._id" required />
         <input type="text" id="LongName" name="LongName" ng-model="Company.LongName" placeholder="Type long name" ng-value="Company.LongName" required/>
         <input type="text" id="ShortName" name="ShortName" ng-model="Company.ShortName" placeholder="Type short name" ng-value="Company.ShortName" required/>
         <input type="number" id="CompanyStatus" name="CompanyStatus" ng-model="Company.CompanyStatus" ng-value="Company.CompanyStatus" required />
+        <input type="text" id="OwnerClient" name="OwnerClient" ng-model="Company.OwnerClient" ng-value="Company.OwnerClient" />
 
         <button type="submit" class="btn btn-submit">Save</button>
     </form>

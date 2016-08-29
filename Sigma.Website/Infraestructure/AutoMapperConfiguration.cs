@@ -16,14 +16,23 @@ namespace Sigma.Website.Infraestructure
         {
             MapperConfiguration config = new MapperConfiguration(cfg =>
             {
-                                
-                cfg.CreateMap<BalanceScoreCard, BalanceScoreCardViewModel> ();
-                cfg.CreateMap<Client, ClientViewModel>();
-                cfg.CreateMap<Company, CompanyViewModel>();
-                cfg.CreateMap<Metric, MetricViewModel>();
-                cfg.CreateMap<Objective, ObjectiveViewModel>();
-                cfg.CreateMap<Perspective, PerspectiveViewModel>();
-                cfg.CreateMap<User, UserViewModel>();
+
+                //cfg.CreateMap<BalanceScoreCard, BalanceScoreCardViewModel> ();
+                //cfg.CreateMap<Client, ClientViewModel>();
+                //cfg.CreateMap<Company, CompanyViewModel>();
+                //cfg.CreateMap<Metric, MetricViewModel>();
+                //cfg.CreateMap<Objective, ObjectiveViewModel>();
+                //cfg.CreateMap<Perspective, PerspectiveViewModel>();
+                //cfg.CreateMap<User, UserViewModel>();
+
+                cfg.CreateMap<BalanceScoreCardViewModel, BalanceScoreCard>()
+                    .ForMember(dest => dest._id, src => src.Ignore());
+                cfg.CreateMap<ClientViewModel, Client>();
+                cfg.CreateMap<CompanyViewModel, Company>();
+                cfg.CreateMap<MetricViewModel, Metric>();
+                cfg.CreateMap<ObjectiveViewModel, Objective>();
+                cfg.CreateMap<PerspectiveViewModel, Perspective>();
+                cfg.CreateMap<UserViewModel, User>();
 
             });
 
