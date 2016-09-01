@@ -6,4 +6,12 @@
 
 <h2>Create</h2>
 
-<section ng-controller="CompanyController"></section>
+<section ng-controller="CompanyController" ng-init="InitializeCreateView()">
+    <form ng-submit="CreateCompany()">
+        <input type="text" id="LongName" name="LongName" ng-model="Company.LongName" placeholder="Type long name" ng-value="Company.LongName" required />
+        <input type="text" id="ShortName" name="ShortName" ng-model="Company.ShortName" placeholder="Type short name" ng-value="Company.ShortName" required />
+        <input type="text" id="OwnerClient" name="OwnerClient" ng-model="Company.OwnerClient" ng-value="Company.OwnerClient" />
+
+        <button type="submit" class="btn btn-submit">Save</button>
+    </form>    
+</section>

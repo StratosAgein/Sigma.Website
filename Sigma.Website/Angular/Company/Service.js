@@ -1,11 +1,15 @@
 ﻿Sigma.service("CompanyService", function ($http) {
     //CreateCompany
-    this.CreateCompany = function (Company) {
+    this.CreateCompany = function (longName, shortName, companyStatus, ownerClient) {
         var response = $http({
             method: "post",
             url: "/Company/CreateCompany",
-            data: JSON.stringify(Company),
-            dataType: "json"
+            params: {
+                ShortName: shortName,
+                LongName: longName,
+                CompanyStatus: companyStatus,
+                OwnerClient: ownerClient
+            }
         });
         return response;
     }

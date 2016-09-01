@@ -56,6 +56,7 @@ namespace Sigma.Website.Controllers
             if (ModelState.IsValid)
             {
                 Company _company = AutoMapperConfiguration.Mapper.Map<Company>(company);
+                _company.RegisterTime = DateTime.UtcNow;
                 bool result = await _companyService.CreateCompany(_company);
 
                 return Json(result, JsonRequestBehavior.AllowGet);

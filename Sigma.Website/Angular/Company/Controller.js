@@ -35,6 +35,10 @@
         }
     }
 
+    $scope.InitializeCreateView = function () {
+
+    }
+
     $scope.EditCompany = function () {
         var editCompanyProcess = CompanyService.EditCompany(
                                     $scope.Company._id,
@@ -55,5 +59,22 @@
             function (response) {
                 console.log(response);
             });
+    }
+
+    $scope.CreateCompany = function () {
+        var createCompanyProcess = CompanyService.CreateCompany(
+                                    $scope.Company.LongName,
+                                    $scope.Company.ShortName,
+                                    $scope.Company.OwnerClient);
+
+        createCompanyProcess.then(function (response) {
+            if (response.data == true) {
+                // edit succesfully
+                $window.location.reload();
+            }
+            else {
+                // can't edit 
+            }
+        })
     }
 });
