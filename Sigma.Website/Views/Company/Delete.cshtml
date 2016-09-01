@@ -6,4 +6,15 @@
 
 <h2>Delete</h2>
 
-<section ng-controller="CompanyController"></section>
+<section ng-controller="CompanyController" ng-init="InitializeDeleteView()">
+    <input type="hidden" id="_id" name="_id" ng-model="Company._id" placeholder="Type long name" ng-value="Company._id" required />
+
+    <span>{{Company.LongName}}</span>
+    <span>{{Company.ShortName}}</span>
+    <span>{{Company.CompanyStatus}}</span>
+    <span>{{Company.OwnerClient}}</span>
+
+    <form ng-submit="DeleteCompany()">
+        <button type="submit" class="btn btn-submit">Delete</button>
+    </form>
+</section>

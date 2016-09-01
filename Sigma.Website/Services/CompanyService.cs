@@ -66,7 +66,12 @@ namespace Sigma.Website.Services
 
         public async Task<bool> DeleteCompany(string companyId)
         {
-            return true;
+            string jsonResult = await _connection.PostData("DeleteCompany",
+                HttpSimpleParameters.Of("Id", companyId));
+
+            dynamic result = JObject.Parse(jsonResult);
+
+            return result.Success;
         }
     }
 }

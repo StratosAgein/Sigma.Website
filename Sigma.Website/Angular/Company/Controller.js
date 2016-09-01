@@ -39,6 +39,21 @@
 
     }
 
+    $scope.InitializeDeleteView = function () {
+        var CompanyId = $Sigma.QueryString().CompanyId;
+        if (CompanyId != undefined && CompanyId != null) {
+            var getCompanyProcess = CompanyService.GetCompanyById(CompanyId);
+
+            getCompanyProcess.then(function (response) {
+                $scope.Company = response.data;
+                console.log(response.data);
+            },
+            function (response) {
+                console.log(response);
+            })
+        }
+    }
+
     $scope.EditCompany = function () {
         var editCompanyProcess = CompanyService.EditCompany(
                                     $scope.Company._id,
@@ -68,6 +83,20 @@
                                     $scope.Company.OwnerClient);
 
         createCompanyProcess.then(function (response) {
+            if (response.data == true) {
+                // edit succesfully
+                $window.location.reload();
+            }
+            else {
+                // can't edit 
+            }
+        })
+    }
+
+    $scope.DeleteCompany = function () {
+        var deleteCompanyProcess = CompanyService.DeleteCompany($scope.Company._id);
+
+        deleteCompanyProcess.then(function (response) {
             if (response.data == true) {
                 // edit succesfully
                 $window.location.reload();

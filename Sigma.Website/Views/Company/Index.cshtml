@@ -10,7 +10,7 @@
     <section>
         <ul>
             <li ng-repeat="item in companies">
-                {{item.LongName}} - <a href="@Url.Action("Edit","Company")&CompanyId={{item._id}}">Edit</a>
+                {{item.LongName}} - <a href="@Url.Action("Edit","Company")&CompanyId={{item._id}}">Edit</a> | <a href="@Url.Action("Delete","Company")&CompanyId={{item._id}}">Delete</a>
             </li>
         </ul>
     </section>
