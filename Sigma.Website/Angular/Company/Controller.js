@@ -1,8 +1,5 @@
 ﻿Sigma.controller("CompanyController", function ($scope, $window, CompanyService) {
 
-    $scope.showAddUpdate = false;
-    $scope.test = "Hola";
-
     $scope.Companies = [];
     $scope.Company = {};
 
