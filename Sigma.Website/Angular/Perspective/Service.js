@@ -1,22 +1,29 @@
 ﻿Sigma.service("PerspectiveService", function ($http) {
     //CreatePerspective
-    this.CreatePerspective = function (Perspective) {
+    this.CreatePerspective = function (name, weight, perspectiveStatus) {
         var response = $http({
             method: "post",
             url: "/Perspective/CreatePerspective",
-            data: JSON.stringify(Perspective),
-            dataType: "json"
+            params: {
+                Name: name,
+                Weight: weight,
+                PerspectiveStatus: perspectiveStatus
+            }
         });
         return response;
     }
 
     //EditPerspective
-    this.EditPerspective = function (Perspective) {
+    this.EditPerspective = function (_id, name, weight, perspectiveStatus) {
         var response = $http({
             method: "post",
             url: "/Perspective/EditPerspective",
-            data: JSON.stringify(Perspective),
-            dataType: "json"
+            params: {
+                _id: _id,
+                Name: name,
+                Weight: weight,
+                PerspectiveStatus: perspectiveStatus
+            }
         });
         return response;
     }

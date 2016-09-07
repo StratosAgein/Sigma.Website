@@ -1,22 +1,29 @@
 ﻿Sigma.service("ObjectiveService", function ($http) {
     //CreateObjective
-    this.CreateObjective = function (User) {
+    this.CreateObjective = function (name, alias, description) {
         var response = $http({
             method: "post",
             url: "/Objective/CreateObjective",
-            data: JSON.stringify(Objective),
-            dataType: "json"
+            params: {
+                Name: name,
+                Alias: alias,
+                Description: description
+            }
         });
         return response;
     }
 
     //EditObjective
-    this.EditObjective = function (Objective) {
+    this.EditObjective = function (_id, name, alias, description) {
         var response = $http({
             method: "post",
             url: "/Objective/EditObjective",
-            data: JSON.stringify(Objective),
-            dataType: "json"
+            params: {
+                _id: _id,
+                Name: name,
+                Alias: alias,
+                Description: description
+            }
         });
         return response;
     }

@@ -1,22 +1,50 @@
 ﻿Sigma.service("ClientService", function ($http) {
     //CreateClient
-    this.CreateClient = function (Client) {
+    this.CreateClient = function (email,
+                                    address,
+                                    clientStatus,
+                                    paymentMethod,
+                                    documentNumber,
+                                    documentType,
+                                    phoneNumber) {
         var response = $http({
             method: "post",
             url: "/Client/CreateClient",
-            data: JSON.stringify(Client),
-            dataType: "json"
+            params: {
+                Email: email,
+                Address: address,
+                ClientStatus: clientStatus,
+                PaymentMethod: paymentMethod,
+                DocumentNumber: documentNumber,
+                DocumentType: documentType,
+                PhoneNumber: phoneNumber
+            }
         });
         return response;
     }
 
     //EditClient
-    this.EditClient = function (Client) {
+    this.EditClient = function (_id,
+                                email,
+                                address,
+                                clientStatus,
+                                paymentMethod,
+                                documentNumber,
+                                documentType,
+                                phoneNumber) {
         var response = $http({
             method: "post",
             url: "/Client/EditClient",
-            data: JSON.stringify(Client),
-            dataType: "json"
+            params: {
+                _id: _id,
+                Email: email,
+                Address: address,
+                ClientStatus: clientStatus,
+                PaymentMethod: paymentMethod,
+                DocumentNumber: documentNumber,
+                DocumentType: documentType,
+                PhoneNumber: phoneNumber
+            }
         });
         return response;
     }

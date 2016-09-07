@@ -1,23 +1,38 @@
 ﻿/// <reference path="Service.js" />
 Sigma.service("UserService", function ($http) {
     //CreateUser
-    this.CreateUser = function (User) {
+    this.CreateUser = function (name, lastname, email, password, status, phone, roles) {
         var response = $http({
             method: "post",
             url: "/User/CreateUser",
-            data: JSON.stringify(User),
-            dataType: "json"
+            params: {
+                Name: name,
+                Lastname: lastname,
+                Email: email,
+                Password: password,
+                Status: status,
+                Phone: phone,
+                Roles: roles
+            }
         });
         return response;
     }
 
     //EditUser
-    this.EditUser = function (User) {
+    this.EditUser = function (_id, name, lastname, email, password, status, phone, roles) {
         var response = $http({
             method: "post",
             url: "/User/EditUser",
-            data: JSON.stringify(User),
-            dataType: "json"
+            params: {
+                _id: _id,
+                Name: name,
+                Lastname: lastname,
+                Email: email,
+                Password: password,
+                Status: status,
+                Phone: phone,
+                Roles: roles
+            }
         });
         return response;
     }

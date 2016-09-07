@@ -1,22 +1,27 @@
 ﻿Sigma.service("BalanceScoreCardService", function ($http) {
     //CreateBalanceScoreCard
-    this.CreateBalanceScoreCard = function (BalanceScoreCard) {
+    this.CreateBalanceScoreCard = function (name, organizationalUnitId) {
         var response = $http({
             method: "post",
             url: "/BalanceScoreCard/CreateBalanceScoreCard",
-            data: JSON.stringify(BalanceScoreCard),
-            dataType: "json"
+            params: {
+                Name: name,
+                OrganizationalUnitId: organizationalUnitId
+            }
         });
         return response;
     }
 
     //EditBalanceScoreCard
-    this.EditBalanceScoreCard = function (BalanceScoreCard) {
+    this.EditBalanceScoreCard = function (_id, name, organizationalUnitId) {
         var response = $http({
             method: "post",
             url: "/BalanceScoreCard/EditBalanceScoreCard",
-            data: JSON.stringify(BalanceScoreCard),
-            dataType: "json"
+            params: {
+                _id: _id,
+                Name: name,
+                OrganizationalUnitId: organizationalUnitId
+            }
         });
         return response;
     }

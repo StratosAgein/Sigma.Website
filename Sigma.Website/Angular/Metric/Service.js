@@ -1,22 +1,78 @@
 ﻿Sigma.service("MetricService", function ($http) {
     //CreateMetric
-    this.CreateUser = function (Metric) {
+    this.CreateUser = function (alias,
+                                code,
+                                description,
+                                formula,
+                                measurementFrequency,
+                                measurementEndDate,
+                                measurementStartDate,
+                                goal,
+                                name,
+                                associatedObjectiveId,
+                                responsibleConfiguration,
+                                responsibleRegistration,
+                                trend,
+                                unitOfMeasurement) {
         var response = $http({
             method: "post",
             url: "/Metric/CreateMetric",
-            data: JSON.stringify(Metric),
-            dataType: "json"
+            params: {
+                Alias: alias,
+                Code: code,
+                Description: description,
+                Formula: formula,
+                MeasurementFrequency: measurementFrequency,
+                MeasurementEndDate: measurementEndDate,
+                MeasurementStartDate: measurementStartDate,
+                Goal: goal,
+                Name: name,
+                AssociatedObjectiveId: associatedObjectiveId,
+                ResponsibleConfiguration: responsibleConfiguration,
+                ResponsibleRegistration: responsibleRegistration,
+                Trend: trend,
+                UnitOfMeasurement: unitOfMeasurement,
+            }
         });
         return response;
     }
 
     //EditMetric
-    this.EditMetric = function (Metric) {
+    this.EditMetric = function (_id,
+                                alias,
+                                code,
+                                description,
+                                formula,
+                                measurementFrequency,
+                                measurementEndDate,
+                                measurementStartDate,
+                                goal,
+                                name,
+                                associatedObjectiveId,
+                                responsibleConfiguration,
+                                responsibleRegistration,
+                                trend,
+                                unitOfMeasurement) {
         var response = $http({
             method: "post",
             url: "/Metric/EditMetric",
-            data: JSON.stringify(Metric),
-            dataType: "json"
+            params: {
+                _id: _id,
+                Alias: alias,
+                Code: code,
+                Description: description,
+                Formula: formula,
+                MeasurementFrequency: measurementFrequency,
+                MeasurementEndDate: measurementEndDate,
+                MeasurementStartDate: measurementStartDate,
+                Goal: goal,
+                Name: name,
+                AssociatedObjectiveId: associatedObjectiveId,
+                ResponsibleConfiguration: responsibleConfiguration,
+                ResponsibleRegistration: responsibleRegistration,
+                Trend: trend,
+                UnitOfMeasurement: unitOfMeasurement,
+            }
         });
         return response;
     }
