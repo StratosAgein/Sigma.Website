@@ -1,5 +1,4 @@
-﻿<script src="@Url.Content("~/Angular/Perspective/Service.js")"></script>
-<script src="@Url.Content("~/Angular/Perspective/Controller.js")"></script>
+﻿
 @{
     ViewBag.Title = "Delete";
 }
@@ -7,3 +6,8 @@
 <h2>Delete</h2>
 
 <section ng-controller="PerspectiveController"></section>
+
+@section Scripts{
+<script src="@Url.Content("~/Angular/Perspective/Service.js")"></script>
+<script src="@Url.Content("~/Angular/Perspective/Controller.js")"></script>
+}
