@@ -1,4 +1,4 @@
-﻿var Sigma = angular.module('Sigma', ['ngRoute']);
+﻿var Sigma = angular.module('Sigma', ['ngRoute','ui.utils']);
 
 Sigma.factory('TokenInjector', ['$log', '$q', '$location', function ($log, $q) {
     

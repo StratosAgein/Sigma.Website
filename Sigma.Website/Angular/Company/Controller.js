@@ -3,16 +3,29 @@
     $scope.showAddUpdate = false;
     $scope.test = "Hola";
 
-    $scope.companies = [];
+    $scope.Companies = [];
     $scope.Company = {};
 
-    $scope.InitializeIndexView = function () {
+    $scope.dataTableOpt = {
+        //custom datatable options
+        "aLengthMenu": [[10, 50, 100, -1], [10, 50, 100, 'All']],
+    };
+    $scope.$watch("data", function (value) {
+        console.log("Data changed, refresh table:");
+        var val = value || null;
+        if (val) {
 
+        }
+    });
+    $scope.InitializeIndexView = function () {
+                
         var getAllProcess = CompanyService.GetAllCompanies();
 
         getAllProcess.then(function (response) {
-            console.log(response.data)
-            $scope.companies = response.data;
+            //console.log(response.data)
+            
+            $scope.Companies = response.data;
+            
         },
         function (response) {
             console.log(response);
