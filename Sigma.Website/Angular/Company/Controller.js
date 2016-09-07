@@ -10,13 +10,7 @@
         //custom datatable options
         "aLengthMenu": [[10, 50, 100, -1], [10, 50, 100, 'All']],
     };
-    $scope.$watch("data", function (value) {
-        console.log("Data changed, refresh table:");
-        var val = value || null;
-        if (val) {
 
-        }
-    });
     $scope.InitializeIndexView = function () {
                 
         var getAllProcess = CompanyService.GetAllCompanies();

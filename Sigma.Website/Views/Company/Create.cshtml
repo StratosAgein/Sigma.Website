@@ -1,5 +1,4 @@
-﻿<script src="@Url.Content("~/Angular/Company/Service.js")"></script>
-<script src="@Url.Content("~/Angular/Company/Controller.js")"></script>
+﻿
 @{
     ViewBag.Title = "Create";
 }
@@ -15,3 +14,8 @@
         <button type="submit" class="btn btn-submit">Save</button>
     </form>    
 </section>
+
+@section Scripts{
+    <script src="@Url.Content("~/Angular/Company/Service.js")"></script>
+    <script src="@Url.Content("~/Angular/Company/Controller.js")"></script>
+}
